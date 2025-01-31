@@ -11,30 +11,32 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@coreui/icons": "^3.0.1",
+    "@coreui/icons-vue": "^2.2.0",
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@coreui/bootstrap-vue": "1.0.0-beta.0",
     "@tsconfig/node22": "^22.0.0",
     "@types/node": "^22.10.7",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/eslint-config-prettier": "^10.1.0",
     "@vue/eslint-config-typescript": "^14.3.0",
     "@vue/tsconfig": "^0.7.0",
+    "bootstrap": "^5.3.3",
     "eslint": "^9.18.0",
     "eslint-plugin-vue": "^9.32.0",
     "jiti": "^2.4.2",
-    "npm-run-all2": "^7.0.2",
-    "prettier": "^3.4.2",
-    "typescript": "~5.7.3",
-    "vite": "^6.0.11",
-    "vite-plugin-vue-devtools": "^7.7.0",
-    "vue-tsc": "^2.2.0",
-    "@coreui/bootstrap-vue": "1.0.0-beta.0",
-    "bootstrap": "^5.3.3",
     "naive-ui": "^2.39.0",
+    "npm-run-all2": "^7.0.2",
     "postcss": "^8.4.40",
     "postcss-scss": "^4.0.9",
+    "prettier": "^3.4.2",
     "sass": "^1.77.8",
-    "vite-plugin-full-reload": "^1.2.0"
+    "typescript": "~5.7.3",
+    "vite": "^6.0.11",
+    "vite-plugin-full-reload": "^1.2.0",
+    "vite-plugin-vue-devtools": "^7.7.0",
+    "vue-tsc": "^2.2.0"
   }
 }

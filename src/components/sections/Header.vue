@@ -7,6 +7,38 @@ import { CIcon } from '@coreui/icons-vue';
 import { cilList, cilShieldAlt } from '@coreui/icons';
 
 let visible = ref(false)
+
+const headerProps = defineProps<{
+  logoType: string,
+  logoImage: string,
+}>()
+
+
+class HeaderConfigs {
+  props: typeof headerProps
+
+  constructor(props: typeof headerProps) {
+    this.props = props
+  }
+
+  bindThis() {
+    this.setLogoType = this.setLogoType.bind(this);
+  }
+
+  setLogoType() {
+    if (this.props.logoType) {
+
+    }
+  }
+}
+
+const headerConfigs = new HeaderConfigs(headerProps)
+
+/* План работы
+
+  1. Делаем лого
+
+*/
 </script>
 
 <template>

@@ -3,40 +3,78 @@ import { ref } from 'vue';
 
 import { CNavbar, CContainer, CNavbarBrand, CNavbarToggler, CCollapse, CNavbarNav, CNavItem, CNavLink, CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem, CDropdownDivider, CForm, CFormInput, CButton, CRow, CCol } from "@coreui/bootstrap-vue"
 
-import { CIcon } from '@coreui/icons-vue';
-import { cilList, cilShieldAlt } from '@coreui/icons';
-
-let visible = ref(false)
+const isBurgerVisible = ref(false)
 
 const headerProps = defineProps<{
-  logoType: string,
-  logoImage: string,
+  // logoType?: string,
+  logo?: string, // image or plain text
 }>()
+
+console.log('- logoType -', headerProps.logoType);
 
 
 class HeaderConfigs {
   props: typeof headerProps
+  logoType: string | undefined
 
   constructor(props: typeof headerProps) {
     this.props = props
+
+    this.setInitialConfigs()
   }
 
   bindThis() {
-    this.setLogoType = this.setLogoType.bind(this);
+    this.setInitialConfigs = this.setInitialConfigs.bind(this);
+
+    this.detectLogoType = this.detectLogoType.bind(this);
+
+    this.setLogo = this.setLogo.bind(this);
   }
 
-  setLogoType() {
-    if (this.props.logoType) {
 
+  /* init */
+  setInitialConfigs() {
+    this.detectLogoType()
+  }
+
+  /* depending on image data (url or relative path or text) set the img or just text */
+  detectLogoType() {
+    this.logoType = "image"
+    const logoString = this.props.logo
+
+    const http = "http://"
+    const https = "https://"
+    // const relativeURL = "./"
+    // const absoluteURL = "/"
+
+    if (logoString?.startsWith(http) || logoString?.startsWith(https)) {
+      this.logoType = "url"
     }
+  }
+
+  /* sets the logo */
+  setLogo() {
+
+    /* для картинки - одно в HTML */
+    /* для текста - другое в HTML */
+
+
+    // const logoType = this.props.logoType
+
+    // if (logoType == 'text') {
+
+    // }
   }
 }
 
 const headerConfigs = new HeaderConfigs(headerProps)
 
+
 /* План работы
 
   1. Делаем лого
+
+  2. Найти библиотеку для иконок
 
 */
 </script>
@@ -47,6 +85,7 @@ const headerConfigs = new HeaderConfigs(headerProps)
       <CRow class="w-100 justify-content-between align-items-center">
         <!-- ? left side -->
         <CCol class="left-column d-flex">
+          <!-- текст или картинка -->
           <CNavbarBrand href="#">Navbar</CNavbarBrand>
 
           <CForm class="d-flex">
@@ -56,8 +95,8 @@ const headerConfigs = new HeaderConfigs(headerProps)
 
         <!-- ? right side -->
         <CCol class="right-column">
-          <CNavbarToggler @click="visible = !visible" />
-          <CCollapse class="navbar-collapse justify-content-end" :visible="visible">
+          <CNavbarToggler @click="isBurgerVisible = !isBurgerVisible" />
+          <CCollapse class="navbar-collapse justify-content-end" :visible="isBurgerVisible">
             <CNavbarNav>
               <CNavItem>
                 <CNavLink href="#" active>
@@ -73,7 +112,7 @@ const headerConfigs = new HeaderConfigs(headerProps)
               <!-- account dropdown -->
               <CDropdown variant="nav-item" class="account">
                 <CDropdownToggle color="secondary">
-                  <CIcon class="icon-width" :icon="cilList" size="xl" />
+                  Иконка
                 </CDropdownToggle>
                 <CDropdownMenu>
                   <CDropdownItem href="#">Action</CDropdownItem>

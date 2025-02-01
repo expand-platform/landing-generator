@@ -8,12 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@coreui/icons':
-        specifier: ^3.0.1
-        version: 3.0.1
-      '@coreui/icons-vue':
-        specifier: ^2.2.0
-        version: 2.2.0(vue@3.5.13(typescript@5.7.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.7.3)
@@ -240,14 +234,6 @@ packages:
     resolution: {integrity: sha512-SKGY6E6v7QGq0P3YTnZQRSrU8t0euLQ3UV/FH5j0JmHYBBu7Mv0Hd9g8AESnj8xrCelKZ5bdZKZhmKaIdG5clw==}
     peerDependencies:
       '@popperjs/core': ^2.11.6
-
-  '@coreui/icons-vue@2.2.0':
-    resolution: {integrity: sha512-FUQw/4/OprUkfSgtraJfdJqXIRj3Ey18nm5LQrfsJNMYTLjU+P5QzpljiSu9F3P/YPlX/sTWY/6ok71SmODtHw==}
-    peerDependencies:
-      vue: ^3.2.20
-
-  '@coreui/icons@3.0.1':
-    resolution: {integrity: sha512-u9UKEcRMyY9pa4jUoLij8pAR03g5g6TLWV33/Mx2ix8sffyi0eO4fLV8DSTQljDCw938zt7KYog5cVKEAJUxxg==}
 
   '@css-render/plugin-bem@0.15.14':
     resolution: {integrity: sha512-QK513CJ7yEQxm/P3EwsI+d+ha8kSOcjGvD6SevM41neEMxdULE+18iuQK6tEChAWMOQNQPLG/Rw3Khb69r5neg==}
@@ -2065,12 +2051,6 @@ snapshots:
       postcss-combine-duplicated-selectors: 10.0.3(postcss@8.5.1)
     transitivePeerDependencies:
       - postcss
-
-  '@coreui/icons-vue@2.2.0(vue@3.5.13(typescript@5.7.3))':
-    dependencies:
-      vue: 3.5.13(typescript@5.7.3)
-
-  '@coreui/icons@3.0.1': {}
 
   '@css-render/plugin-bem@0.15.14(css-render@0.15.14)':
     dependencies:

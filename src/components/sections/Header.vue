@@ -10,15 +10,18 @@ const headerProps = defineProps<{
   logo?: string, // image or plain text
 }>()
 
-console.log('- logoType -', headerProps.logoType);
+console.log('- logoType -', headerProps.logo);
 
 
 class HeaderConfigs {
   props: typeof headerProps
-  logoType: string | undefined
+  logo: string | undefined
+  typeOfLogo: string | undefined
 
   constructor(props: typeof headerProps) {
     this.props = props
+
+    /* initials */
 
     this.setInitialConfigs()
   }
@@ -34,45 +37,30 @@ class HeaderConfigs {
 
   /* init */
   setInitialConfigs() {
+    this.logo = this.props.logo
+    this.typeOfLogo = "text"
+
     this.detectLogoType()
   }
 
-  /* depending on image data (url or relative path or text) set the img or just text */
+  /* text or image? */
   detectLogoType() {
-    this.logoType = "image"
     const logoString = this.props.logo
 
-    const http = "http://"
-    const https = "https://"
-    // const relativeURL = "./"
-    // const absoluteURL = "/"
+    const imageURLPattern = [
+      "http://", "https://", "./", "/"
+    ]
 
-    if (logoString?.startsWith(http) || logoString?.startsWith(https)) {
-      this.logoType = "url"
-    }
-  }
+    const isImage = imageURLPattern.some(pattern => logoString?.includes(pattern))
 
-  /* sets the logo */
-  setLogo() {
-
-    /* для картинки - одно в HTML */
-    /* для текста - другое в HTML */
-
-
-    // const logoType = this.props.logoType
-
-    // if (logoType == 'text') {
-
-    // }
+    if (isImage) this.typeOfLogo = "image"
   }
 }
 
-const headerConfigs = new HeaderConfigs(headerProps)
+const configs = new HeaderConfigs(headerProps)
 
 
 /* План работы
-
-  1. Делаем лого
 
   2. Найти библиотеку для иконок
 
@@ -84,9 +72,13 @@ const headerConfigs = new HeaderConfigs(headerProps)
     <CContainer>
       <CRow class="w-100 justify-content-between align-items-center">
         <!-- ? left side -->
+
         <CCol class="left-column d-flex">
-          <!-- текст или картинка -->
-          <CNavbarBrand href="#">Navbar</CNavbarBrand>
+          <!-- ? logo text or image -->
+          <CNavbarBrand href="#">
+            <span v-if="configs.typeOfLogo == 'text'" class="logo">{{ configs.logo }}</span>
+            <img v-else :src="configs.logo" class="logo" alt="site-logo" />
+          </CNavbarBrand>
 
           <CForm class="d-flex">
             <CFormInput type="search" class="me-2" placeholder="Search" />

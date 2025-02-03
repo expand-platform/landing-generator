@@ -3,6 +3,8 @@ import { ref } from 'vue';
 
 import { CNavbar, CContainer, CNavbarBrand, CNavbarToggler, CCollapse, CNavbarNav, CNavItem, CNavLink, CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem, CDropdownDivider, CForm, CFormInput, CButton, CRow, CCol } from "@coreui/bootstrap-vue"
 
+import BIcon from "@components/icons/BIcon.vue"
+
 const isBurgerVisible = ref(false)
 
 const headerProps = defineProps<{
@@ -59,6 +61,8 @@ const configs = new HeaderConfigs(headerProps)
 </script>
 
 <template>
+  <BIcon />
+
   <CNavbar expand="lg" color-scheme="light" class="bg-light">
     <CContainer>
       <CRow class="w-100 justify-content-between align-items-center">

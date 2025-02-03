@@ -6,11 +6,8 @@ import { CNavbar, CContainer, CNavbarBrand, CNavbarToggler, CCollapse, CNavbarNa
 const isBurgerVisible = ref(false)
 
 const headerProps = defineProps<{
-  // logoType?: string,
   logo?: string, // image or plain text
 }>()
-
-console.log('- logoType -', headerProps.logo);
 
 
 class HeaderConfigs {
@@ -59,12 +56,6 @@ class HeaderConfigs {
 
 const configs = new HeaderConfigs(headerProps)
 
-
-/* План работы
-
-  2. Найти библиотеку для иконок
-
-*/
 </script>
 
 <template>

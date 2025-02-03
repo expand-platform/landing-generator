@@ -20,6 +20,9 @@
       "@sections/*": [
         "./src/components/sections/*"
       ],
+      "@configs/*": [
+        "./src/configs/*"
+      ],
       "@ts/*": [
         "./src/ts/*"
       ],

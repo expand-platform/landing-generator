@@ -1,7 +1,11 @@
 <script setup lang="ts">
+/* header */
 import Header from '@sections/Header.vue'
-import Features from './components/sections/Features.vue';
-import { features } from './config/features';
+import { headerConfigs } from '@configs/header';
+
+/* features */
+import Features from '@components/sections/Features.vue';
+import { features } from '@configs/features';
 
 
 </script>
@@ -10,7 +14,7 @@ import { features } from './config/features';
   <h2 class="title text-center mt-3 mb-5"> PlayGround: test your components out </h2>
 
   <!-- ? header test -->
-  <Header logo="EXPAND Platform"></Header>
+  <Header :logo="headerConfigs.logo"></Header>
 
 
   <!-- ? features test -->

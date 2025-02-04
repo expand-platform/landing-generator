@@ -1,36 +1,35 @@
-import type { Nav } from "@types/header"
+import type { NavT, HeaderConfigsT } from "@types/header"
 
 export class HeaderConfigs {
-  props: any | undefined
-  logo: string | undefined
-  typeOfLogo: string | undefined
+  logo: string
+  typeOfLogo: string
+  nav: NavT[]
 
-  constructor(props: any) {
-    this.props = props
-
+  constructor(props: HeaderConfigsT) {
     /* initials */
+    this.logo = props.logo
+    this.typeOfLogo = "text"
 
-    this.setInitialConfigs()
+    this.nav = props.nav
+
+    this.init()
   }
 
   bindThis() {
-    this.setInitialConfigs = this.setInitialConfigs.bind(this);
+    this.init = this.init.bind(this);
 
     this.detectLogoType = this.detectLogoType.bind(this);
   }
 
 
   /* init */
-  setInitialConfigs() {
-    this.logo = this.props.logo
-    this.typeOfLogo = "text"
-
+  init() {
     this.detectLogoType()
   }
 
   /* text or image? */
   detectLogoType() {
-    const logoString = this.props.logo
+    const logoString = this.logo
 
     const imageURLPattern = [
       "http://", "https://", "./", "/"

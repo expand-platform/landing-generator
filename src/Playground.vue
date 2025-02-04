@@ -2,6 +2,7 @@
 /* header */
 import Header from '@sections/Header.vue'
 import { headerConfigs } from '@configs/header';
+import { navConfigs } from '@configs/nav';
 
 /* features */
 import Features from '@components/sections/Features.vue';
@@ -14,7 +15,7 @@ import { features } from '@configs/features';
   <h2 class="title text-center mt-3 mb-5"> PlayGround: test your components out </h2>
 
   <!-- ? header test -->
-  <Header :logo="headerConfigs.logo" :menu="headerConfigs.nav"></Header>
+  <Header :logo="headerConfigs.logo" :nav="navConfigs"></Header>
 
 
   <!-- ? features test -->

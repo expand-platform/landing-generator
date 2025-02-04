@@ -8,7 +8,7 @@ import { CNavbar, CContainer, CNavbarBrand, CNavbarToggler, CCollapse, CNavbarNa
 import BIcon from "@components/icons/BIcon.vue"
 
 /* types */
-import type { Nav } from "@types/header"
+import type { NavT } from "@configs/header"
 
 /* toggles */
 const isBurgerVisible = ref(false)
@@ -17,7 +17,7 @@ const isBurgerVisible = ref(false)
 /* props */
 const headerProps = defineProps<{
   logo?: string, // image or plain text
-  nav?: Nav[], // nav links
+  nav?: NavT[], // nav links
 }>()
 
 
@@ -30,7 +30,6 @@ const configs = new HeaderConfigs(headerProps)
 
 <template>
   <!-- <BIcon /> -->
-
   <CNavbar expand="lg" color-scheme="light" class="bg-light">
     <CContainer>
       <CRow class="w-100 justify-content-between align-items-center">
@@ -39,8 +38,8 @@ const configs = new HeaderConfigs(headerProps)
         <CCol class="left-column d-flex">
           <!-- ? logo text or image -->
           <CNavbarBrand href="#">
-            <span v-if="configs.typeOfLogo == 'text'" class="logo">{{ configs.logo }}</span>
-            <img v-else :src="configs.logo" class="logo" alt="site-logo" />
+            <span v-if="configs.typeOfLogo == 'text'" class="logo">{{ logo }}</span>
+            <img v-else :src="logo" class="logo" alt="site-logo" />
           </CNavbarBrand>
 
           <CForm class="d-flex">
@@ -53,14 +52,12 @@ const configs = new HeaderConfigs(headerProps)
           <CNavbarToggler @click="isBurgerVisible = !isBurgerVisible" />
           <CCollapse class="navbar-collapse justify-content-end" :visible="isBurgerVisible">
             <CNavbarNav>
-              <CNavItem>
-                <CNavLink href="#" active>
-                  Home
+              <CNavItem v-for="navLink in nav" :key="navLink">
+                <CNavLink :href="navLink.url" :active="navLink.active">
+                  {{ navLink.text }}
                 </CNavLink>
               </CNavItem>
-              <CNavItem>
-                <CNavLink href="#">Link</CNavLink>
-              </CNavItem>
+
 
               <CButton type="submit" color="success" variant="outline">Search</CButton>
 

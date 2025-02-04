@@ -1,7 +1,7 @@
 <script setup>
 /* header */
 import Header from '@sections/Header.vue'
-import { headerConfig } from '@configs/headerConfig';
+import { headerConfig } from '@/configs/header/headerConfig';
 
 /* features */
 import Features from '@components/sections/Features.vue';

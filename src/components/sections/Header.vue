@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-
+import type { HeaderConfigT } from "@types/header/HeaderConfigT"
 /* components */
 import { CNavbar, CContainer, CNavbarBrand, CNavbarToggler, CCollapse, CNavbarNav, CNavItem, CNavLink, CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem, CDropdownDivider, CForm, CFormInput, CButton, CRow, CCol } from "@coreui/bootstrap-vue"
 
-// import BIcon from "@components/icons/BIcon.vue"
+import BIcon from "@components/icons/BIcon.vue"
 
 /* props */
 defineProps<{
-  configs: any
+  configs: HeaderConfigT
 }>()
 
 /* toggles */
@@ -18,7 +18,6 @@ const isBurgerVisible = ref(false)
 <template>
   <!-- {{ configs }} -->
 
-  <!-- <BIcon /> -->
   <CNavbar expand="lg"
     :style="{ backgroundColor: configs.style.bg, color: configs.style.color, padding: configs.style.padding }">
     <CContainer>
@@ -28,7 +27,7 @@ const isBurgerVisible = ref(false)
         <CCol class="left-column d-flex">
           <!-- ? logo text or image -->
           <CNavbarBrand href="#">
-            <span v-if="configs.logo.text" class="logo-text" :style="{ color: configs.color }">{{
+            <span v-if="configs.logo.text" class="logo-text" :style="{ color: configs.style.color }">{{
               configs.logo.text }}</span>
             <img v-else :src="configs.logo.image" class="logo-image" alt="site-logo" />
           </CNavbarBrand>
@@ -42,12 +41,12 @@ const isBurgerVisible = ref(false)
 
         <CCol class="center-column">
           <CNavbarToggler @click="isBurgerVisible = !isBurgerVisible" />
-          <CCollapse :class="['navbar-collapse', 'justify-content-'+configs.nav.align]" :visible="isBurgerVisible">
+          <CCollapse :class="['navbar-collapse', 'justify-content-' + configs.nav.align]" :visible="isBurgerVisible">
 
             <!-- links -->
             <CNavbarNav v-if="configs.nav.placement == 'center'">
               <CNavItem v-for="navLink in configs.nav.links" :key="navLink">
-                <CNavLink :href="navLink.url" :active="navLink.active" :style="{ color: configs.color }">
+                <CNavLink :href="navLink.url" :active="navLink.active" :style="{ color: configs.style.color }">
                   {{ navLink.text }}
                 </CNavLink>
               </CNavItem>
@@ -62,7 +61,7 @@ const isBurgerVisible = ref(false)
             <CNavbarNav v-if="configs.nav.placement == 'right'">
               <!-- links -->
               <CNavItem v-for="navLink in configs.nav.links" :key="navLink">
-                <CNavLink :href="navLink.url" :active="navLink.active" :style="{ color: configs.color }">
+                <CNavLink :href="navLink.url" :active="navLink.active" :style="{ color: configs.style.color }">
                   {{ navLink.text }}
                 </CNavLink>
               </CNavItem>
@@ -83,6 +82,13 @@ const isBurgerVisible = ref(false)
                 </CDropdownMenu>
               </CDropdown> -->
             </CNavbarNav>
+
+            <!-- ? social -->
+            <aside class="social-icons d-flex">
+              <div class="icon-wrapper" v-for="icon in configs.socialIcons" :key="icon">
+                <BIcon :icon="icon.icon" :url="icon.url" />
+              </div>
+            </aside>
           </CCollapse>
         </CCol>
 

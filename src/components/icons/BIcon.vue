@@ -3,12 +3,16 @@ interface iconProps {
   icon?: string, // "bi-alarm", "bi-time"
   size?: string, // px, em, rem
   color?: string, // #000, #fff
+  url?: string, // link to website
+  margin?: string, // link to website
 }
 
 const iconProps = withDefaults(defineProps<iconProps>(), {
-  icon: "bi-box-seam",
+  icon: "box-seam",
   size: "1.5rem",
   color: "#000",
+  url: "",
+  margin: "0 .5rem",
 })
 </script>
 
@@ -20,7 +24,9 @@ const iconProps = withDefaults(defineProps<iconProps>(), {
 -->
 
 <template>
-  <i :class="['bi', icon]" :style="{ fontSize: size, color: color }"></i>
+  <a :href="url" target="_blank">
+    <i :class="['bi', 'bi-'+icon]" :style="{ fontSize: size, color: color, margin: margin }"></i>
+  </a>
 </template>
 
 <style lang="scss" scoped></style>

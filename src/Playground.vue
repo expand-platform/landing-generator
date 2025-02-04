@@ -14,7 +14,7 @@ import { features } from '@configs/features';
   <h2 class="title text-center mt-3 mb-5"> PlayGround: test your components out </h2>
 
   <!-- ? header test -->
-  <Header :logo="headerConfigs.logo"></Header>
+  <Header :logo="headerConfigs.logo" :menu="headerConfigs.nav"></Header>
 
 
   <!-- ? features test -->

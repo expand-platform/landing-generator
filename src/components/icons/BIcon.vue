@@ -13,7 +13,7 @@ const iconProps = withDefaults(defineProps<iconProps>(), {
 </script>
 
 <!--
-  How to use this component :
+  How to use this component:
 
   ? <BIcon />
   ? <BIcon icon="bi-heart" size="3rem" color="#fff" />

@@ -20,6 +20,9 @@ export default defineConfig({
       "@sections": fileURLToPath(new URL('./src/components/sections', import.meta.url)),
 
       "@configs": fileURLToPath(new URL('./src/configs', import.meta.url)),
+      "@types": fileURLToPath(new URL('./src/types', import.meta.url)),
+      "@classes": fileURLToPath(new URL('./src/classes', import.meta.url)),
+
       "@ts": fileURLToPath(new URL('./src/ts', import.meta.url)),
       "@scss": fileURLToPath(new URL('./src/scss', import.meta.url)),
     },

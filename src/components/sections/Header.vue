@@ -1,67 +1,35 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
+
+/* components */
 import { CNavbar, CContainer, CNavbarBrand, CNavbarToggler, CCollapse, CNavbarNav, CNavItem, CNavLink, CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem, CDropdownDivider, CForm, CFormInput, CButton, CRow, CCol } from "@coreui/bootstrap-vue"
 
 import BIcon from "@components/icons/BIcon.vue"
 
+/* types */
+import type { Nav } from "@types/header"
+
+/* toggles */
 const isBurgerVisible = ref(false)
 
+
+/* props */
 const headerProps = defineProps<{
   logo?: string, // image or plain text
+  nav?: Nav[], // nav links
 }>()
 
 
-class HeaderConfigs {
-  props: typeof headerProps
-  logo: string | undefined
-  typeOfLogo: string | undefined
-
-  constructor(props: typeof headerProps) {
-    this.props = props
-
-    /* initials */
-
-    this.setInitialConfigs()
-  }
-
-  bindThis() {
-    this.setInitialConfigs = this.setInitialConfigs.bind(this);
-
-    this.detectLogoType = this.detectLogoType.bind(this);
-
-    this.setLogo = this.setLogo.bind(this);
-  }
-
-
-  /* init */
-  setInitialConfigs() {
-    this.logo = this.props.logo
-    this.typeOfLogo = "text"
-
-    this.detectLogoType()
-  }
-
-  /* text or image? */
-  detectLogoType() {
-    const logoString = this.props.logo
-
-    const imageURLPattern = [
-      "http://", "https://", "./", "/"
-    ]
-
-    const isImage = imageURLPattern.some(pattern => logoString?.includes(pattern))
-
-    if (isImage) this.typeOfLogo = "image"
-  }
-}
+/* classes */
+import { HeaderConfigs } from '@/classes/headerConfig';
 
 const configs = new HeaderConfigs(headerProps)
 
 </script>
 
 <template>
-  <BIcon />
+  <!-- <BIcon /> -->
 
   <CNavbar expand="lg" color-scheme="light" class="bg-light">
     <CContainer>

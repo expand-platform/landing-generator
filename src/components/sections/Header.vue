@@ -1,36 +1,26 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-
 /* components */
 import { CNavbar, CContainer, CNavbarBrand, CNavbarToggler, CCollapse, CNavbarNav, CNavItem, CNavLink, CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem, CDropdownDivider, CForm, CFormInput, CButton, CRow, CCol } from "@coreui/bootstrap-vue"
 
-import BIcon from "@components/icons/BIcon.vue"
+// import BIcon from "@components/icons/BIcon.vue"
 
-/* types */
-import type { NavT } from "@configs/header"
+/* props */
+defineProps<{
+  configs: any
+}>()
 
 /* toggles */
 const isBurgerVisible = ref(false)
-
-
-/* props */
-const headerProps = defineProps<{
-  logo?: string, // image or plain text
-  nav?: NavT[], // nav links
-}>()
-
-
-/* classes */
-import { HeaderConfigs } from '@/classes/headerConfig';
-
-const configs = new HeaderConfigs(headerProps)
-
 </script>
 
 <template>
+  <!-- {{ configs }} -->
+
   <!-- <BIcon /> -->
-  <CNavbar expand="lg" color-scheme="light" class="bg-light">
+  <CNavbar expand="lg"
+    :style="{ backgroundColor: configs.style.bg, color: configs.style.color, padding: configs.style.padding }">
     <CContainer>
       <CRow class="w-100 justify-content-between align-items-center">
         <!-- ? left side -->
@@ -38,13 +28,14 @@ const configs = new HeaderConfigs(headerProps)
         <CCol class="left-column d-flex">
           <!-- ? logo text or image -->
           <CNavbarBrand href="#">
-            <span v-if="configs.typeOfLogo == 'text'" class="logo">{{ logo }}</span>
-            <img v-else :src="logo" class="logo" alt="site-logo" />
+            <span v-if="configs.logo.text" class="logo-text" :style="{ color: configs.color }">{{
+              configs.logo.text }}</span>
+            <img v-else :src="configs.logo.image" class="logo-image" alt="site-logo" />
           </CNavbarBrand>
 
-          <CForm class="d-flex">
+          <!-- <CForm class="d-flex">
             <CFormInput type="search" class="me-2" placeholder="Search" />
-          </CForm>
+          </CForm> -->
         </CCol>
 
         <!-- ? right side -->
@@ -52,17 +43,19 @@ const configs = new HeaderConfigs(headerProps)
           <CNavbarToggler @click="isBurgerVisible = !isBurgerVisible" />
           <CCollapse class="navbar-collapse justify-content-end" :visible="isBurgerVisible">
             <CNavbarNav>
-              <CNavItem v-for="navLink in nav" :key="navLink">
-                <CNavLink :href="navLink.url" :active="navLink.active">
+
+              <!-- links -->
+              <CNavItem v-for="navLink in configs.nav.links" :key="navLink">
+                <CNavLink :href="navLink.url" :active="navLink.active" :style="{ color: configs.color }">
                   {{ navLink.text }}
                 </CNavLink>
               </CNavItem>
 
 
-              <CButton type="submit" color="success" variant="outline">Search</CButton>
+              <!-- <CButton type="submit" color="success" variant="outline">Search</CButton> -->
 
               <!-- account dropdown -->
-              <CDropdown variant="nav-item" class="account">
+              <!-- <CDropdown variant="nav-item" class="account">
                 <CDropdownToggle color="secondary">
                   Иконка
                 </CDropdownToggle>
@@ -72,7 +65,7 @@ const configs = new HeaderConfigs(headerProps)
                   <CDropdownDivider />
                   <CDropdownItem href="#">Something else here</CDropdownItem>
                 </CDropdownMenu>
-              </CDropdown>
+              </CDropdown> -->
             </CNavbarNav>
           </CCollapse>
         </CCol>

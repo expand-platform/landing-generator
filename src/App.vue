@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Playground from './Playground.vue'
+import Landing from './Landing.vue'
 </script>
 
 <template>
 
-  <Playground />
+  <Landing />
 
 </template>
 

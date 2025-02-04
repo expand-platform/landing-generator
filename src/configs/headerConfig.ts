@@ -9,7 +9,8 @@ export const headerConfig = {
     image: false,
   },
   nav: {
-    position: "right",
+    placement: "center", // left, right
+    align: "center", // start, center, end
     links: [
       {
         text: "Nav link 1",

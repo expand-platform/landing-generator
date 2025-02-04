@@ -33,17 +33,33 @@ const isBurgerVisible = ref(false)
             <img v-else :src="configs.logo.image" class="logo-image" alt="site-logo" />
           </CNavbarBrand>
 
+          <!-- search -->
           <!-- <CForm class="d-flex">
             <CFormInput type="search" class="me-2" placeholder="Search" />
           </CForm> -->
+        </CCol>
+
+
+        <CCol class="center-column">
+          <CNavbarToggler @click="isBurgerVisible = !isBurgerVisible" />
+          <CCollapse :class="['navbar-collapse', 'justify-content-'+configs.nav.align]" :visible="isBurgerVisible">
+
+            <!-- links -->
+            <CNavbarNav v-if="configs.nav.placement == 'center'">
+              <CNavItem v-for="navLink in configs.nav.links" :key="navLink">
+                <CNavLink :href="navLink.url" :active="navLink.active" :style="{ color: configs.color }">
+                  {{ navLink.text }}
+                </CNavLink>
+              </CNavItem>
+            </CNavbarNav>
+          </CCollapse>
         </CCol>
 
         <!-- ? right side -->
         <CCol class="right-column">
           <CNavbarToggler @click="isBurgerVisible = !isBurgerVisible" />
           <CCollapse class="navbar-collapse justify-content-end" :visible="isBurgerVisible">
-            <CNavbarNav>
-
+            <CNavbarNav v-if="configs.nav.placement == 'right'">
               <!-- links -->
               <CNavItem v-for="navLink in configs.nav.links" :key="navLink">
                 <CNavLink :href="navLink.url" :active="navLink.active" :style="{ color: configs.color }">

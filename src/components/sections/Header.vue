@@ -1,79 +1,78 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-
+import type { HeaderConfigT } from "@types/header/HeaderConfigT"
+/* components */
 import { CNavbar, CContainer, CNavbarBrand, CNavbarToggler, CCollapse, CNavbarNav, CNavItem, CNavLink, CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem, CDropdownDivider, CForm, CFormInput, CButton, CRow, CCol } from "@coreui/bootstrap-vue"
 
-import { CIcon } from '@coreui/icons-vue';
-import { cilList, cilShieldAlt } from '@coreui/icons';
+import BIcon from "@components/icons/BIcon.vue"
 
-let visible = ref(false)
-
-const headerProps = defineProps<{
-  logoType: string,
-  logoImage: string,
+/* props */
+defineProps<{
+  configs: HeaderConfigT
 }>()
 
-
-class HeaderConfigs {
-  props: typeof headerProps
-
-  constructor(props: typeof headerProps) {
-    this.props = props
-  }
-
-  bindThis() {
-    this.setLogoType = this.setLogoType.bind(this);
-  }
-
-  setLogoType() {
-    if (this.props.logoType) {
-
-    }
-  }
-}
-
-const headerConfigs = new HeaderConfigs(headerProps)
-
-/* План работы
-
-  1. Делаем лого
-
-*/
+/* toggles */
+const isBurgerVisible = ref(false)
 </script>
 
 <template>
-  <CNavbar expand="lg" color-scheme="light" class="bg-light">
+  <!-- {{ configs }} -->
+
+  <CNavbar expand="lg"
+    :style="{ backgroundColor: configs.style.bg, color: configs.style.color, padding: configs.style.padding }">
     <CContainer>
       <CRow class="w-100 justify-content-between align-items-center">
         <!-- ? left side -->
-        <CCol class="left-column d-flex">
-          <CNavbarBrand href="#">Navbar</CNavbarBrand>
 
-          <CForm class="d-flex">
+        <CCol class="left-column d-flex">
+          <!-- ? logo text or image -->
+          <CNavbarBrand href="#">
+            <span v-if="configs.logo.text" class="logo-text" :style="{ color: configs.style.color }">{{
+              configs.logo.text }}</span>
+            <img v-else :src="configs.logo.image" class="logo-image" alt="site-logo" />
+          </CNavbarBrand>
+
+          <!-- search -->
+          <!-- <CForm class="d-flex">
             <CFormInput type="search" class="me-2" placeholder="Search" />
-          </CForm>
+          </CForm> -->
+        </CCol>
+
+
+        <CCol class="center-column">
+          <CNavbarToggler @click="isBurgerVisible = !isBurgerVisible" />
+          <CCollapse :class="['navbar-collapse', 'justify-content-' + configs.nav.align]" :visible="isBurgerVisible">
+
+            <!-- links -->
+            <CNavbarNav v-if="configs.nav.placement == 'center'">
+              <CNavItem v-for="navLink in configs.nav.links" :key="navLink">
+                <CNavLink :href="navLink.url" :active="navLink.active" :style="{ color: configs.style.color }">
+                  {{ navLink.text }}
+                </CNavLink>
+              </CNavItem>
+            </CNavbarNav>
+          </CCollapse>
         </CCol>
 
         <!-- ? right side -->
         <CCol class="right-column">
-          <CNavbarToggler @click="visible = !visible" />
-          <CCollapse class="navbar-collapse justify-content-end" :visible="visible">
-            <CNavbarNav>
-              <CNavItem>
-                <CNavLink href="#" active>
-                  Home
+          <CNavbarToggler @click="isBurgerVisible = !isBurgerVisible" />
+          <CCollapse class="navbar-collapse justify-content-end" :visible="isBurgerVisible">
+            <CNavbarNav v-if="configs.nav.placement == 'right'">
+              <!-- links -->
+              <CNavItem v-for="navLink in configs.nav.links" :key="navLink">
+                <CNavLink :href="navLink.url" :active="navLink.active" :style="{ color: configs.style.color }">
+                  {{ navLink.text }}
                 </CNavLink>
               </CNavItem>
-              <CNavItem>
-                <CNavLink href="#">Link</CNavLink>
-              </CNavItem>
 
-              <CButton type="submit" color="success" variant="outline">Search</CButton>
+
+              <!-- <CButton type="submit" color="success" variant="outline">Search</CButton> -->
 
               <!-- account dropdown -->
-              <CDropdown variant="nav-item" class="account">
+              <!-- <CDropdown variant="nav-item" class="account">
                 <CDropdownToggle color="secondary">
-                  <CIcon class="icon-width" :icon="cilList" size="xl" />
+                  Иконка
                 </CDropdownToggle>
                 <CDropdownMenu>
                   <CDropdownItem href="#">Action</CDropdownItem>
@@ -81,8 +80,15 @@ const headerConfigs = new HeaderConfigs(headerProps)
                   <CDropdownDivider />
                   <CDropdownItem href="#">Something else here</CDropdownItem>
                 </CDropdownMenu>
-              </CDropdown>
+              </CDropdown> -->
             </CNavbarNav>
+
+            <!-- ? social -->
+            <aside class="social-icons d-flex">
+              <div class="icon-wrapper" v-for="icon in configs.socialIcons" :key="icon">
+                <BIcon :icon="icon.icon" :url="icon.url" />
+              </div>
+            </aside>
           </CCollapse>
         </CCol>
 

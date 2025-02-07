@@ -1,7 +1,12 @@
+# Генератор лендингов
+
+## Цель проекта
+
+Создать генератор лендингов - инструмент для разработчиков, с помощью которого можно легко и быстро сделать (сгенерировать) простой статичный лендинг. 
+
 # Секции лендинга
 
 1. [Header](https://getbootstrap.com/docs/5.3/examples/headers/) и [навбары](https://getbootstrap.com/docs/5.3/examples/navbars/)
-
 
 
 2. [Cover](https://getbootstrap.com/docs/5.3/examples/heroes/) и [Hero](https://getbootstrap.com/docs/5.3/examples/cover/)

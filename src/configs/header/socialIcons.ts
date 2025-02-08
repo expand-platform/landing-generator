@@ -4,7 +4,7 @@ import type { SocialIconT } from "@/types/header/socialIconT";
 
 /* supported icons: telegram, facebook, instagram */
 
-export const socialIcons: SocialIconT[] = [
+export const socialIcons = [
   {
     icon: "telegram",
     url: "https://telegram.org/",

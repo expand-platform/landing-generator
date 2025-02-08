@@ -2,7 +2,7 @@ import type { NavT } from "@types/header/NavT"
 
 /* TODO: add hovers for links */
 
-export const navConfig: NavT = {
+export const navConfig = {
   placement: "center", // left, right
   align: "center", // start, center, end
   links: [

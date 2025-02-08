@@ -3,6 +3,7 @@ import { navConfig } from "@/configs/header/navConfig"
 import { socialIcons } from "./socialIcons"
 
 
+
 export const headerConfig = {
   style: {
     bg: "#000",
@@ -25,3 +26,5 @@ export const headerConfig = {
 }
 
 export type HeaderConfigTest = typeof headerConfig;
+
+

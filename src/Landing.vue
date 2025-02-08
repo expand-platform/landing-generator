@@ -23,7 +23,7 @@ import { features } from '@configs/features';
 
 
   <!-- ? features test -->
-  <!-- <Features card-text="This is text for card" :cards="features"></Features> -->
+  <Features :cards="features"></Features>
 </template>
 
 <style lang="scss" scoped></style>

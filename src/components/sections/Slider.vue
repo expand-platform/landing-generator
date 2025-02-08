@@ -1,30 +1,18 @@
 <script setup lang="ts">
+import type { SliderConfig } from "@/configs/sliderConfig";
 import { CCarousel, CCarouselItem } from "@coreui/bootstrap-vue"
+import { BCarousel, BCarouselSlide } from 'bootstrap-vue-next';
 
 const props = defineProps<{
-    images?: { src: string }[]
-    padding?: string
+  configs: SliderConfig
 }>()
-console.log(props.images)
 </script>
 
 <template>
-    <div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner" >
-    <div class="carousel-item active" v-for="image in props.images">
-      <img :src="image.src" class="d-block w-100" alt="slide">
-    </div>
-    
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+
+<BCarousel :controls="configs.controls" :indicators="configs.indicators">
+  <BCarouselSlide v-for="image in props.configs.images" :img-src="image.src" />
+</BCarousel>
 
 </template>
 

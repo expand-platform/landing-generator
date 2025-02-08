@@ -3,9 +3,14 @@
 import Header from '@sections/Header.vue'
 import { headerConfig } from '@/configs/header/headerConfig';
 
+import Slider from '@sections/Slider.vue'
+import { sliderConfig } from '@/configs/sliderConfig'
+
 /* features */
 import Features from '@components/sections/Features.vue';
 import { features } from '@configs/features';
+
+
 
 
 </script>
@@ -21,6 +26,7 @@ import { features } from '@configs/features';
   -->
   <Header :configs="headerConfig"></Header>
 
+  <Slider :configs="sliderConfig"></Slider>
 
   <!-- ? features test -->
   <Features :cards="features"></Features>

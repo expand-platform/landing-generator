@@ -1,9 +1,10 @@
-import type { HeaderConfigT } from "@types/header/HeaderConfigT"
+// import type { HeaderConfigT } from "@/types/header/HeaderConfigT"
 import { navConfig } from "@/configs/header/navConfig"
 import { socialIcons } from "./socialIcons"
 
 
-export const headerConfig: HeaderConfigT = {
+
+export const headerConfig = {
   style: {
     bg: "#000",
     color: "#fff",
@@ -23,3 +24,7 @@ export const headerConfig: HeaderConfigT = {
     icon: "", // bi-search
   }
 }
+
+export type HeaderConfigTest = typeof headerConfig;
+
+

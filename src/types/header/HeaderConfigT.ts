@@ -1,4 +1,4 @@
-import type { SocialIconT } from "./socialIconT"
+import type { SocialIconT } from "./SocialIconT"
 import type { NavConfigT } from "./NavT"
 
 export interface HeaderConfigT {

@@ -1,20 +1,17 @@
 <script setup lang="ts">
+import type { SliderConfig } from "@/configs/sliderConfig";
 import { CCarousel, CCarouselItem } from "@coreui/bootstrap-vue"
 import { BCarousel, BCarouselSlide } from 'bootstrap-vue-next';
 
-
-
 const props = defineProps<{
-    images?: { src: string }[]
-    padding?: string
+  configs: SliderConfig
 }>()
-console.log(props.images)
 </script>
 
 <template>
 
-<BCarousel controls>
-  <BCarouselSlide v-for="image in props.images" :img-src="image.src" />
+<BCarousel :controls="configs.controls" :indicators="configs.indicators">
+  <BCarouselSlide v-for="image in props.configs.images" :img-src="image.src" />
 </BCarousel>
 
 </template>

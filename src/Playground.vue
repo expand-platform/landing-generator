@@ -9,10 +9,9 @@ import { features } from '@configs/features';
 </script>
 
 <template>
-  <h2 class="text-center">Playground</h2>
 
 
-  <Slider :configs="sliderConfig"></Slider>
+  
 
   <!-- ? features test -->
   <!-- <Features card-text="This is text for card" :cards="features"></Features> -->

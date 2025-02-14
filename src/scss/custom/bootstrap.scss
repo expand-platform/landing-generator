@@ -1,22 +1,18 @@
+@use "@scss/base/media.scss";
+
 :root {
-    /* theme */
-    --bs-body-font-family: Inter, Arial, sans-serif;
-    --bs-font-monospace: var(--vp-font-family-mono);
-} 
+    /* theme variables */
+    --bs-body-font-family: "Raleway", "Arial", sans-serif;
+    --bs-body-font-size: 1.1rem;
 
-code {
-    --code-letter-spacing: 0 !important;
 }
 
-.btn-primary {
-    --bs-btn-bg: #2a87e5;
-    --bs-btn-color: white;
+/* header nav */
+.navbar {
+    --bs-navbar-brand-font-size: 1.75rem;
+    --bs-navbar-toggler-icon-bg: url("/icons/burger.svg");
 }
 
-/* disable container on small devices */
-@media (min-width: 576px) {
-    .container,
-    .container-sm {
-        max-width: 100%;
-    }
+a {
+    --bs-link-color-rgb: white;
 }

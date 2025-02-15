@@ -20,7 +20,7 @@ const props = defineProps<{
 
 <template>
   <CContainer>
-    <CRow class="d-block d-md-flex">
+    <CRow class="d-block d-md-flex row-cols-md-2 row-cols-xl-4">
       <CCol v-for="feature in features?.cards" class="mb-3">
         <CCard class="text-center text-md-start">
           <CCardBody>

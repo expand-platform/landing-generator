@@ -1,7 +1,6 @@
-  <script setup lang="ts">
+<script setup lang="ts">
 import {
   CCard,
-  CCardImage,
   CCardBody,
   CCardTitle,
   CCardText,
@@ -10,36 +9,33 @@ import {
   CRow,
   CCol,
 } from '@coreui/bootstrap-vue'
-import { ref } from 'vue'
-
-const count = ref(0)
-console.log(count.value)
-let image = 'https://dummyimage.com/100.png'
+import BIcon from '@components/icons/BIcon.vue'
 
 interface Card {
   text: string
-  image: string
+  description: string
+  icon: any
+  button: any
 }
 
 let props = defineProps<{
-  cardText?: string
   cards?: Card[]
 }>()
-
-console.log(props.cardText)
 </script>
 
 <template>
   <CContainer>
     <CRow>
       <CCol v-for="card in cards">
-        <CCard style="width: 18rem" >
+        <CCard style="width: 18rem; margin: 0.5rem; border: none">
+        <BIcon :icon="card.icon.name" :size="card.icon.size" :margin="card.icon.margin" />
           <CCardBody>
             <CCardTitle>{{ card.text }}</CCardTitle>
-            <CCardText>{{ cardText }}</CCardText>
-            <CButton href="#" color="primary">Go somewhere</CButton>
+            <CCardText>{{ card.description }}</CCardText>
+            <CButton :href="card.button.href" :color="card.button.color">{{
+              card.button.text
+            }}</CButton>
           </CCardBody>
-          <CCardImage orientation="bottom" :src="card.image" alt="" />
         </CCard>
       </CCol>
     </CRow>

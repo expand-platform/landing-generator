@@ -14,7 +14,8 @@ import { sliderConfig } from '@/configs/sliderConfig';
 
   <Slider :configs="sliderConfig"></Slider>
 
-
+  <!-- ? features test -->
+  <Features :cards="features"></Features>
 </template>
 
 <style lang="scss" scoped>

@@ -11,30 +11,28 @@ import {
 } from '@coreui/bootstrap-vue'
 import BIcon from '@components/icons/BIcon.vue'
 
-interface Card {
-  text: string
-  description: string
-  icon: any
-  button: any
-}
+import type { FeaturesConfigT } from '@configs/featuresConfig.ts'
 
-let props = defineProps<{
-  cards?: Card[]
+const props = defineProps<{
+  features?: FeaturesConfigT
 }>()
 </script>
 
 <template>
   <CContainer>
-    <CRow>
-      <CCol v-for="card in cards">
-        <CCard style="width: 18rem; margin: 0.5rem; border: none">
-        <BIcon :icon="card.icon.name" :size="card.icon.size" :margin="card.icon.margin" />
+    <CRow class="d-block d-md-flex">
+      <CCol v-for="feature in features?.cards" class="mb-3">
+        <CCard class="text-center text-md-start">
           <CCardBody>
-            <CCardTitle>{{ card.text }}</CCardTitle>
-            <CCardText>{{ card.description }}</CCardText>
-            <CButton :href="card.button.href" :color="card.button.color">{{
-              card.button.text
-            }}</CButton>
+            <BIcon :icon="feature.icon" :style="features?.style.icons" />
+            <CCardTitle>{{ feature.text }}</CCardTitle>
+            <CCardText>{{ feature.description }}</CCardText>
+            <CButton
+              :href="feature.button.href"
+              :color="feature.button.color"
+              :style="features?.style.buttons"
+              >{{ feature.button.text }}</CButton
+            > 
           </CCardBody>
         </CCard>
       </CCol>

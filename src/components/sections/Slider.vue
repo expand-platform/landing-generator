@@ -6,21 +6,21 @@ const props = defineProps<{
   configs: SliderConfig
 }>()
 
-const carouserBoxStyle = {
-    "padding-top": props.configs.padding_top,
-    "padding-bottom": props.configs.padding_bottom,
-    "padding-left": props.configs.padding_left,
-    "padding-right": props.configs.padding_right,
-}
+let width = window.innerWidth
+
 </script>
 
 <template>
 
-<div class="carousel-div" :style="carouserBoxStyle">
-  <BCarousel :controls="configs.controls" :indicators="configs.indicators" :fade="configs.fade" :ride="configs.ride as any" :interval="configs.interval">
+  <!-- Если ширина экрана больше 768 - используется этот вариант -->
+  <BCarousel v-if="width > 768" :style="configs.style" :controls="configs.controls" :indicators="configs.indicators" :fade="configs.fade" :interval="configs.interval">
     <BCarouselSlide v-for="image in configs.images" class="carousel-img" :img-src="image.src" :caption="image.caption ? image.caption : ''"/>
   </BCarousel>
-</div>
+
+  <!-- В ином случае - этот -->
+  <BCarousel v-else :style="configs.style" :fade="configs.fade" :interval="configs.interval" :ride="configs.ride as any">
+    <BCarouselSlide v-for="image in configs.images" class="carousel-img" :img-src="image.src"/>
+  </BCarousel>
 
 </template>
 

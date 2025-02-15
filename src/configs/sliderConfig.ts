@@ -9,17 +9,16 @@ export let sliderConfig = {
   fade: false,
 
   // Автопрокрутка
-  ride: false, 
+  ride: "carousel", 
   // false: выключено
   // true: начинает крутится после первого взаимодействия с каруселью
   // "carousel": крутиться с самого начала
   
-  interval: 5000, // В милисекундах
+  interval: 3000, // В милисекундах
 
-  padding_top: "200px",
-  padding_bottom: "100px",
-  padding_left: "100px",
-  padding_right: "100px",
+  style: {
+    padding: "0px 0px 0px 0px"
+  },
 
   images: [
     // Первый слайд всегда активен
@@ -29,16 +28,16 @@ export let sliderConfig = {
 
     // Можно добавить caption, но если его не будет - ничего не сломается
     {
-      "src": "https://dummyimage.com/1000x300.png?text=FirstSlide",
-      "caption": "Hello World First"
+      "src": "https://dummyimage.com/1000x500.png?text=FirstSlide",
+      "caption": "Hello World"
     },
     {
-      "src": "https://dummyimage.com/1000x300.png?text=SecondSlide",
-      "caption": "Hello World Second"
+      "src": "https://dummyimage.com/1000x500.png?text=SecondSlide",
+      "caption": "Hello World"
     },
     {
-      "src": "https://dummyimage.com/1000x300.png?text=ThirdSlide",
-      "caption": "Hello World Third"
+      "src": "https://dummyimage.com/1000x500.png?text=ThirdSlide",
+      "caption": "Hello World"
     }
   ]
 }

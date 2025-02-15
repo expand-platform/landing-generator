@@ -4,7 +4,7 @@ import { sliderConfig } from '@/configs/sliderConfig';
 
 /* features */
 import Features from '@components/sections/Features.vue';
-import { features } from '@configs/features';
+import { featuresConfig } from '@configs/featuresConfig';
 
 import Footer from "@sections/Footer.vue";
 import { footerConfig } from '@/configs/footerConfig';
@@ -18,7 +18,7 @@ import { footerConfig } from '@/configs/footerConfig';
   
 
   <!-- ? features test -->
-  <!-- <Features card-text="This is text for card" :cards="features"></Features> -->
+  <Features :features="featuresConfig"></Features>
 </template>
 
 <style lang="scss" scoped></style>

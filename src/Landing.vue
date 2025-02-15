@@ -6,6 +6,8 @@ import { headerConfig } from '@/configs/header/headerConfig';
 import Slider from "@sections/Slider.vue"
 import { sliderConfig } from '@/configs/sliderConfig';
 
+import Features from '@sections/Features.vue';
+import { featuresConfig } from '@configs/featuresConfig'
 
 </script>
 
@@ -14,8 +16,7 @@ import { sliderConfig } from '@/configs/sliderConfig';
 
   <Slider :configs="sliderConfig"></Slider>
 
-  <!-- ? features test -->
-  <Features :cards="features"></Features>
+  <Features :features="featuresConfig"></Features>
 </template>
 
 <style lang="scss" scoped>

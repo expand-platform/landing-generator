@@ -1,23 +1,9 @@
-/* libraries */
-@import './../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
-
 /* foundation */
-@import '@scss/base/custom-reset.scss';
-@import '@scss/base/colors.scss';
-@import '@scss/base/fonts.scss';
-@import '@scss/base/size.scss';
-@import '@scss/base/space.scss';
-@import '@scss/base/media.scss';
+@use '@scss/base/google-fonts.scss';
 
 /* customization */
-@import '@scss/custom/bootstrap.scss';
-@import '@scss/custom/vitepress.scss';
-@import '@scss/custom/naive.scss';
+@use '@scss/custom/bootstrap.scss';
 
-/* cross-files helpers */
-@import '@scss/helpers/display.scss';
-@import '@scss/helpers/flex.scss';
-@import '@scss/helpers/position.scss';
-@import '@scss/helpers/transition.scss';
-@import '@scss/helpers/appearance.scss';
+/* own styles */
+@use '@scss/base/reset.scss';
+@use '@scss/base/sizing.scss';

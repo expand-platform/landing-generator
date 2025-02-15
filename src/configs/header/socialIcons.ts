@@ -1,23 +1,22 @@
-import type { SocialIconT } from "@/types/header/socialIconT";
-
-/* TODO: add hovers for links */
-
-/* supported icons: telegram, facebook, instagram */
-
 export const socialIcons = [
   {
-    icon: "telegram",
-    url: "https://telegram.org/",
-    classes: [], // any css class
+    icon: "phone",
+    url: "tel:0997719963",
+    text: "099 362 99 71",
+    style: {
+      color: "white",
+      fontSize: "1.25rem",
+    }
   },
-  {
-    icon: "youtube",
-    url: "https://www.youtube.com/",
-    classes: [],
-  },
-  {
-    icon: "instagram",
-    url: "http://instagram.com/",
-    classes: [],
-  },
+  // {
+  //   icon: "youtube",
+  //   url: "https://www.youtube.com/",
+  //   color: "white",
+  //   classes: [],
+  // },
+  // {
+  //   icon: "instagram",
+  //   url: "http://instagram.com/",
+  //   classes: [],
+  // },
 ]

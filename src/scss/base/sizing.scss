@@ -1,3 +1,5 @@
+@use "./media.scss";
+
 // gaps: margins
 // fills: paddings
 
@@ -45,4 +47,10 @@ $huge: 3rem;
 
 .mw-50 {
   max-width: 50%;
+}
+
+.w-lg-100 {
+  @include media.lg {
+    width: 100%;
+  }
 }

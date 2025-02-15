@@ -7,6 +7,7 @@ const props = defineProps<{
 }>()
 
 
+
 </script>
 
 <template>
@@ -21,9 +22,13 @@ const props = defineProps<{
     </footer> -->
     <footer class="footer-box">
         <BContainer>
-        <BRow class="justify-content-between">
-            <BCol> Column </BCol>
-            <BCol> Column </BCol>
+        <BRow class="d-block d-md-flex justify-content-md-between align-items-md-center text-center height">
+            <BCol class="text-md-start padding"> {{ configs.text }} </BCol>
+            <BCol class="text-md-end padding"> 
+                <span v-for="phone in configs.phoneNumbers" class="px-2">
+                    {{ phone }}
+                </span>
+            </BCol>
         </BRow>
         </BContainer>
     </footer>
@@ -35,6 +40,10 @@ const props = defineProps<{
     background-color: black;
     color: white;
     width: 100%;
-    height: 100px;
 }
+
+.padding {
+    padding: 1em 0.5em;
+}
+
 </style>

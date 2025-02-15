@@ -33,7 +33,7 @@ export const headerConfig = {
   phones: {
     enabled: false,
     // placement: "right",
-    numbers: ["093 777 11 22"],
+    numbers: ["093 747 95 75"],
   },
   search: {
     enabled: true,

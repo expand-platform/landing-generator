@@ -1,10 +1,6 @@
 export let footerConfig = {
-    
-    text: "Hello World",
-
-    phoneNumbers: [
-        "123123","321321"
-    ]
+  text: "Ольга Лукьяненко, 2025 ©",
+  phoneNumbers: ["093 747 95 75"]
 }
 
 

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 /* header */
 import Header from '@sections/Header.vue'
 import { headerConfig } from '@/configs/header/headerConfig';
@@ -9,6 +9,9 @@ import { sliderConfig } from '@/configs/sliderConfig';
 import Features from '@sections/Features.vue';
 import { featuresConfig } from '@configs/featuresConfig'
 
+
+import Footer from "@sections/Footer.vue";
+import { footerConfig } from '@/configs/footerConfig';
 </script>
 
 <template>
@@ -17,7 +20,8 @@ import { featuresConfig } from '@configs/featuresConfig'
   <Slider :configs="sliderConfig"></Slider>
 
   <Features :features="featuresConfig"></Features>
+
+  <Footer :configs="footerConfig"></Footer>
 </template>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

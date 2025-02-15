@@ -1,5 +1,8 @@
 export let featuresConfig = {
   style: {
+    section: {
+      margin: "0 0 100px 0"
+    },
     icons: {
       fontSize: '3rem',
       padding: '0',
@@ -11,45 +14,46 @@ export let featuresConfig = {
 
   cards: [
     {
-      text: 'This is text for card 1',
-      description: 'Description 1',
-      icon: '1-circle-fill',
+      text: 'Расклад на любовь',
+      description: 'Описание преимуществ расклада на любовь',
+      icon: 'heart-half',
       button: {
         color: 'link', // За счет color меняется тип кнопки (link, primary и т.д.)
         href: '#',
-        text: 'Button 1',
+        text: 'Заказать расклад на любовь',
       },
     },
     {
-      text: 'This is text for card 2',
-      description: 'Description 2',
-      icon: '2-circle-fill',
+      text: 'Расклад на деньги',
+      description: 'Описание преимуществ расклада на деньги',
+      icon: 'currency-bitcoin',
       button: {
         color: 'link',
         href: '#',
-        text: 'Button 2',
+        text: 'Заказать расклад на деньги',
       },
     },
     {
-      text: 'This is text for card 3',
-      description: 'Description 3',
-      icon: '3-circle-fill',
+      text: 'Расклад на любовь',
+      description: 'Описание преимуществ расклада на любовь',
+      icon: 'heart-half',
       button: {
-        color: 'link',
+        color: 'link', // За счет color меняется тип кнопки (link, primary и т.д.)
         href: '#',
-        text: 'Button 3',
+        text: 'Заказать расклад на любовь',
       },
     },
     {
-      text: 'This is text for card 4',
-      description: 'Description 4',
-      icon: '4-circle-fill',
+      text: 'Расклад на деньги',
+      description: 'Описание преимуществ расклада на деньги',
+      icon: 'currency-bitcoin',
       button: {
         color: 'link',
         href: '#',
-        text: 'Button 4',
+        text: 'Заказать расклад на деньги',
       },
     },
+
   ],
 }
 

@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import type { HeaderConfig } from "@configs/header/headerConfig"
 /* components */
-import { CNavbar, CContainer, CNavbarBrand, CNavbarToggler, CCollapse, CNavbarNav, CNavItem, CNavLink, CRow, CCol } from "@coreui/bootstrap-vue"
+import { CNavbar, CContainer, CNavbarBrand, CNavbarToggler, CCollapse, CNavbarNav, CNavItem, CNavLink, CRow, CCol, CDropdownItem, CDropdownMenu, CDropdownToggle, CDropdown } from "@coreui/bootstrap-vue"
 
 import BIcon from "@components/icons/BIcon.vue"
 
@@ -41,12 +41,24 @@ const isBurgerVisible = ref(false)
     <!-- collapsible content (<sm) / columns (>lg) -->
     <CContainer>
       <CCollapse class="col navbar-collapse justify-content-end" :visible="isBurgerVisible">
-        <CNavbarNav>
+        <CNavbarNav class="align-items-center">
           <!-- ? nav links -->
           <CNavItem v-for="navLink in configs.nav.links" :key="navLink">
             <CNavLink class="nav-link" :href="navLink.url" :active="navLink.active"
               :style="{ color: configs.style.color }">
-              {{ navLink.text }}
+
+              <!-- link text -->
+              <span v-if="!navLink.dropdown">{{ navLink.text }}</span>
+
+              <!-- dropdown -->
+              <CDropdown v-else variant="nav-item" :popper="false" dark>
+                <CDropdownToggle color="secondary">{{ navLink.text }}</CDropdownToggle>
+                <CDropdownMenu>
+                  <CDropdownItem v-for="dropdownLink in navLink.dropdown" :key="dropdownLink.text"
+                    :href="dropdownLink.url">{{ dropdownLink.text
+                    }}</CDropdownItem>
+                </CDropdownMenu>
+              </CDropdown>
             </CNavLink>
           </CNavItem>
         </CNavbarNav>

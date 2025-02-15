@@ -9,15 +9,15 @@ export let sliderConfig = {
   fade: false,
 
   // Автопрокрутка
-  ride: "carousel", 
+  ride: "carousel",
   // false: выключено
   // true: начинает крутится после первого взаимодействия с каруселью
   // "carousel": крутиться с самого начала
-  
-  interval: 3000, // В милисекундах
+
+  interval: 3000, // В миллисекундах
 
   style: {
-    padding: "0px 0px 0px 0px",
+    padding: "0",
     margin: "0 0 100px 0",
   },
 
@@ -25,20 +25,20 @@ export let sliderConfig = {
     // Первый слайд всегда активен
 
     // Картинки должны быть одинаковых пропорций
-    // Пример: картинки 1920х1080 и 1280х720, размер разный но пропорции одинаоковые (16:9)
+    // Пример: картинки 1920х1080 и 1280х720, размер разный но пропорции одинаковые (16:9)
 
     // Можно добавить caption, но если его не будет - ничего не сломается
     {
-      "src": "https://dummyimage.com/1000x500.png?text=FirstSlide",
-      "caption": "Hello World"
+      "src": "/img/taro/1.jpg",
+      "caption": "Расклад на судьбу"
     },
     {
-      "src": "https://dummyimage.com/1000x500.png?text=SecondSlide",
-      "caption": "Hello World"
+      "src": "/img/taro/2.jpeg",
+      "caption": "Расклад на год"
     },
     {
-      "src": "https://dummyimage.com/1000x500.png?text=ThirdSlide",
-      "caption": "Hello World"
+      "src": "/img/taro/3.jpeg",
+      "caption": "Расклад на любовь"
     }
   ]
 }

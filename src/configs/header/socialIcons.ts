@@ -1,22 +1,19 @@
 export const socialIcons = [
   {
-    icon: "phone",
-    url: "tel:0997719963",
-    text: "099 362 99 71",
+    icon: "telegram",
+    url: "tel:0937479575",
+    text: "093 747 95 75",
     style: {
       color: "white",
       fontSize: "1.25rem",
     }
   },
   // {
-  //   icon: "youtube",
-  //   url: "https://www.youtube.com/",
-  //   color: "white",
-  //   classes: [],
-  // },
-  // {
-  //   icon: "instagram",
-  //   url: "http://instagram.com/",
-  //   classes: [],
+  //   icon: "phone",
+  //   url: "tel:0937479575",
+  //   style: {
+  //     color: "white",
+  //     fontSize: "1.25rem",
+  //   }
   // },
 ]

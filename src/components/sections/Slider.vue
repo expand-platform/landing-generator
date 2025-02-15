@@ -2,7 +2,7 @@
 import type { SliderConfig } from "@/configs/sliderConfig";
 import { BCarousel, BCarouselSlide } from 'bootstrap-vue-next';
 
-const props = defineProps<{
+defineProps<{
   configs: SliderConfig
 }>()
 
@@ -12,17 +12,35 @@ let width = window.innerWidth
 
 <template>
 
-  <!-- Если ширина экрана больше 768 - используется этот вариант -->
-  <BCarousel v-if="width > 768" :style="configs.style" :controls="configs.controls" :indicators="configs.indicators" :fade="configs.fade" :interval="configs.interval">
-    <BCarouselSlide v-for="image in configs.images" class="carousel-img" :img-src="image.src" :caption="image.caption ? image.caption : ''"/>
+  <!-- >= 768px -->
+  <BCarousel v-if="width > 768" :style="configs.style" :controls="configs.controls" :indicators="configs.indicators"
+    :fade="configs.fade" :interval="configs.interval">
+    <BCarouselSlide v-for="image in configs.images" :key="image.src" class="carousel-img" :img-src="image.src">
+      <template #caption>
+        <h2>
+          {{ image.caption }}
+        </h2>
+      </template>
+    </BCarouselSlide>
   </BCarousel>
 
-  <!-- В ином случае - этот -->
-  <BCarousel v-else :style="configs.style" :fade="configs.fade" :interval="configs.interval" :ride="configs.ride as any">
-    <BCarouselSlide v-for="image in configs.images" class="carousel-img" :img-src="image.src"/>
+  <!-- mobile -->
+  <BCarousel v-else :style="configs.style" :fade="configs.fade" :interval="configs.interval" :ride="configs.ride">
+    <BCarouselSlide v-for="image in configs.images" :key="image.src" class="carousel-img" :img-src="image.src">
+      <template #caption>
+        <h2>
+          {{ image.caption }}
+        </h2>
+      </template>
+    </BCarouselSlide>
   </BCarousel>
 
 </template>
 
 <style lang="scss" scoped>
+.carousel-img {
+  max-width: 100vw;
+  max-height: 100vh;
+
+}
 </style>

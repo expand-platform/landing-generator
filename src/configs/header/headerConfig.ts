@@ -1,21 +1,17 @@
 import { navLinks } from "./navLinks"
 import { socialIcons } from "./socialIcons"
+import { headerStyle } from "./headerStyles"
+import { phoneNumbers } from "./phones"
 
 
 export const headerConfig = {
-  style: {
-    backgroundColor: "#100c08",
-    color: "#f5f5f5",
-    padding: "1rem .5rem",
-    fontSize: "1.25rem",
-  },
-  flex: {
-    justifyContent: "space-between",
-  },
+  style: headerStyle,
+
   logo: {
     text: "Таро в теме",
     image: "",
   },
+  
   nav: {
     enabled: true,
     placement: "center", // left, right
@@ -25,15 +21,12 @@ export const headerConfig = {
     },
     links: navLinks,
   },
+  phone: {
+    numbers: phoneNumbers,
+  },
   socialIcons: {
     enabled: true,
-    placement: "right", // left, right
     icons: socialIcons,
-  },
-  phones: {
-    enabled: false,
-    // placement: "right",
-    numbers: ["093 747 95 75"],
   },
   search: {
     enabled: true,

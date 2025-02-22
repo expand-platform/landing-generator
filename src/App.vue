@@ -5,8 +5,8 @@ import Playground from './Playground.vue'
 
 <template>
 
-  <Landing />
-  <!-- <Playground /> -->
+  <!-- <Landing /> -->
+  <Playground />
 
 </template>
 

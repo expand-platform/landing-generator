@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import Pricing from '@sections/Pricing.vue';
+import { pricingConfig } from '@/configs/pricingConfig';
 </script>
 
 <template>
-  <div></div>
+  
+<Pricing :configs="pricingConfig"></Pricing>
 
 </template>
 

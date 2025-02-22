@@ -1,11 +1,18 @@
 export let featuresConfig = {
+  title: "Title",
+
   style: {
+    title: {
+      fontSize: "2.5rem",
+      margin: "0 0 50px 0"
+    },
     section: {
       margin: "0 0 100px 0"
     },
     icons: {
-      fontSize: '3rem',
+      fontSize: '5rem',
       padding: '0',
+      color: "red"
     },
     buttons: {
       padding: '0',

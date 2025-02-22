@@ -17,8 +17,13 @@ export let sliderConfig = {
   interval: 3000, // В миллисекундах
 
   style: {
-    padding: "0",
-    margin: "0 0 100px 0",
+    section: {
+      padding: "0",
+      margin: "0 0 100px 0",
+    },
+    images: {
+      maxHeight: "auto"
+    }
   },
 
   images: [

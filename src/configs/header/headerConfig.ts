@@ -1,5 +1,5 @@
 import { navLinks } from "./navLinks"
-import { socialIcons } from "./socialIcons"
+import { socialIcons } from "../common/socialIcons"
 import { headerStyle } from "./headerStyles"
 import { phoneNumbers } from "./phones"
 
@@ -11,7 +11,7 @@ export const headerConfig = {
     text: "Таро в теме",
     image: "",
   },
-  
+
   nav: {
     enabled: true,
     placement: "center", // left, right
@@ -24,10 +24,7 @@ export const headerConfig = {
   phone: {
     numbers: phoneNumbers,
   },
-  socialIcons: {
-    enabled: true,
-    icons: socialIcons,
-  },
+  socialIcons: socialIcons,
   search: {
     enabled: true,
     placement: "", // left (with logo), center (no nav), right (with nav)

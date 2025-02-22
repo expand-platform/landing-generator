@@ -8,6 +8,7 @@ import {
   CContainer,
   CRow,
   CCol,
+  CCardImage
 } from '@coreui/bootstrap-vue'
 import BIcon from '@components/icons/BIcon.vue'
 
@@ -24,22 +25,28 @@ defineProps<{
     <CContainer>
       <CRow class="d-block d-md-flex row-cols-md-2 row-cols-xl-4">
         <CCol v-for="feature in features?.cards" :key="feature.text" class="mb-3">
-          <CCard class="text-center ">
-            <CCardBody>
-              <BIcon :icon="feature.icon" :style="features?.style.icons" />
-              <!-- <Icon :style="features?.style.icons">
-                <Heart20Filled />
-              </Icon> -->
-              <!-- <div class="image" :style="features?.style.icons">
-                <img src="@sicons/fluent/Money16Regular.svg" />
-              </div> -->
-              
-              <CCardTitle>{{ feature.text }}</CCardTitle>
-              <CCardText>{{ feature.description }}</CCardText>
-              <CButton :href="feature.button.href" :color="feature.button.color" :style="features?.style.buttons">{{
-                feature.button.text }}</CButton>
-            </CCardBody>
-          </CCard>
+          <a :href="feature.button.href">
+            <CCard class="text-center">
+              <!-- ? add / remove specific styles depending on icon / image pick -->
+              <CCardBody class="p-0 pb-3">
+                <!--? icon or image -->
+                <section class="img-wrapper mb-3" :class="{ 'px-2': feature.icon }">
+                  <BIcon v-if="feature.icon" :icon="feature.icon" :url="feature.button.href"
+                    :style="features?.style.icons" />
+                  <!--? orientation top / bottom for corner radius -->
+                  <CCardImage :style="features?.style.images" v-else orientation="top" :src="feature.image" class="mb-3" />
+                </section>
+
+                <!-- texts -->
+                <section class="card-content" :class="{ 'px-2': feature.image }">
+                  <CCardTitle>{{ feature.text }}</CCardTitle>
+                  <CCardText>{{ feature.description }}</CCardText>
+                  <CButton :href="feature.button.href" :color="feature.button.color" :style="features?.style.buttons">{{
+                    feature.button.text }}</CButton>
+                </section>
+              </CCardBody>
+            </CCard>
+          </a>
         </CCol>
       </CRow>
     </CContainer>
@@ -48,5 +55,4 @@ defineProps<{
 
 <style lang="scss" scoped>
 @use "@scss/base/media.scss";
-
 </style>

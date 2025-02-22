@@ -43,8 +43,8 @@ const isBurgerVisible = ref(false)
       <CCollapse class="col navbar-collapse justify-content-end align-items-center " :visible="isBurgerVisible">
         <!-- ? nav links -->
 
-        <div class="row w-lg-100">
-          <div class="col-lg flex-grow-2 flex-basis-lg-50">
+        <div class="row justify-content-lg-end w-lg-100">
+          <div class="col-md col-lg-6">
             <CNavbarNav class="justify-content-end align-items-center ">
               <CNavItem v-for="navLink in configs.nav.links" :key="navLink">
                 <CNavLink class="nav-link" :href="navLink.url" :active="navLink.active"
@@ -55,11 +55,11 @@ const isBurgerVisible = ref(false)
 
                   <!-- dropdown -->
                   <CDropdown v-else variant="nav-item" :popper="false" dark>
-                    <CDropdownToggle :style="{ 'fontSize': configs.style.navLink.fontSize }" color="secondary">{{
+                    <CDropdownToggle :style="configs.style.navLink">{{
                       navLink.text }}</CDropdownToggle>
                     <CDropdownMenu>
-                      <CDropdownItem :style="{ 'fontSize': configs.style.dropdown.fontSize }"
-                        v-for="dropdownLink in navLink.dropdown" :key="dropdownLink.text" :href="dropdownLink.url">{{
+                      <CDropdownItem :style="configs.style.dropdown" v-for="dropdownLink in navLink.dropdown"
+                        :key="dropdownLink.text" :href="dropdownLink.url">{{
                           dropdownLink.text
                         }}</CDropdownItem>
                     </CDropdownMenu>
@@ -68,7 +68,9 @@ const isBurgerVisible = ref(false)
               </CNavItem>
             </CNavbarNav>
           </div>
-          <aside class="phones col-lg text-center mb-2 mb-lg-0" v-if="configs.phone.numbers">
+
+          <!-- ? phone numbers -->
+          <aside class="phones col-md-4 col-lg-2 text-center mb-2 mb-lg-0" v-if="configs.phone.numbers">
             <CRow class="h-100 align-items-center">
               <CCol v-for="phoneNumber in configs.phone.numbers" :key="phoneNumber">
                 <a class="phone-link col-lg" :href="'tel:' + phoneNumber" :style="configs.style.phones"
@@ -77,9 +79,10 @@ const isBurgerVisible = ref(false)
             </CRow>
           </aside>
 
-          <aside class="social-icons col-lg flex-grow-0 flex-basis-0">
-            <CRow class="flex-nowrap h-100 align-items-center">
-              <CCol v-for="icon in configs.socialIcons.icons" :key="icon.icon">
+          <!-- ? social icons -->
+          <aside class="social-icons col-md col-lg-2 flex-grow-0 flex-basis-0">
+            <CRow class="flex-nowrap h-100 justify-content-center align-items-center">
+              <CCol class="col-3 col-lg-4" v-for="icon in configs.socialIcons.icons" :key="icon.icon">
                 <!-- ? icons -->
                 <BIcon :icon="icon.icon" :url="icon.url" :style="configs.style.icons" :text="icon.text" />
               </CCol>

@@ -11,11 +11,12 @@ export const headerStyle = {
 
   navLink: {
     fontSize: "1.25rem",
+    color: "#f5f5f5",
   },
 
-
   dropdown: {
-    fontSize: "1.1rem"
+    fontSize: "1.1rem",
+    color: "#f5f5f5"
   },
 
   phones: {

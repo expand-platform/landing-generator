@@ -13,27 +13,31 @@ let width = window.innerWidth
 <template>
 
   <!-- >= 768px -->
-  <BCarousel v-if="width > 768" :style="configs.style" :controls="configs.controls" :indicators="configs.indicators"
-    :fade="configs.fade" :interval="configs.interval">
-    <BCarouselSlide v-for="image in configs.images" :key="image.src" class="carousel-img" :img-src="image.src">
-      <template #caption>
-        <h2 class="caption">
-          {{ image.caption }}
-        </h2>
-      </template>
-    </BCarouselSlide>
-  </BCarousel>
+  <section :style="configs.style.section">
 
-  <!-- mobile -->
-  <BCarousel v-else :style="configs.style" :fade="configs.fade" :interval="configs.interval" :ride="configs.ride as any">
-    <BCarouselSlide v-for="image in configs.images" :key="image.src" class="carousel-img" :img-src="image.src">
-      <template #caption>
-        <h2 class="caption">
-          {{ image.caption }}
-        </h2>
-      </template>
-    </BCarouselSlide>
-  </BCarousel>
+    <BCarousel v-if="width > 768" :controls="configs.controls" :indicators="configs.indicators" :fade="configs.fade"
+      :interval="configs.interval">
+      <BCarouselSlide v-for="image in configs.images" :key="image.src" class="carousel-img" :img-src="image.src">
+        <template #caption>
+          <h2 class="caption">
+            {{ image.caption }}
+          </h2>
+        </template>
+      </BCarouselSlide>
+    </BCarousel>
+
+    <!-- mobile -->
+    <BCarousel v-else :fade="configs.fade" :interval="configs.interval" :ride="configs.ride as any">
+      <BCarouselSlide v-for="image in configs.images" :key="image.src" class="carousel-img" :img-src="image.src">
+        <template #caption>
+          <h2 class="caption">
+            {{ image.caption }}
+          </h2>
+        </template>
+      </BCarouselSlide>
+    </BCarousel>
+  </section>
+
 
 </template>
 
@@ -51,25 +55,26 @@ let width = window.innerWidth
 }
 
 .caption {
-  text-shadow: 
-    -1px -1px 0 black,  
-    1px -1px 0 black,  
-    -1px  1px 0 black,  
-    1px  1px 0 black;
-     
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+
   margin-bottom: -100px;
   font-size: 20px;
-  
+
   @include media.sm {
     font-size: 40px;
     margin-bottom: -15px;
   }
+
   @include media.md {
     font-size: 60px;
   }
+
   @include media.lg {
     margin-bottom: 0;
   }
 }
-
 </style>

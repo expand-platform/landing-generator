@@ -7,7 +7,7 @@ import { pricingConfig } from '@/configs/pricingConfig'
 
 <template>
   <Pricing :configs="pricingConfig"></Pricing>
-  <Contacts :configs="contactsConfig" />
+  <!-- <Contacts :configs="contactsConfig" /> -->
 </template>
 
 <style lang="scss" scoped></style>

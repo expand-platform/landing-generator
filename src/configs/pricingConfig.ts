@@ -1,22 +1,22 @@
 export let pricingConfig = {
     cards: [
         {
-          "src": "https://picsum.photos/300/300/?image=41",
           "title": "Title1",
-          "description": "lorem ipsum dolor sit amet1",
-          "button": "Button"
+          "price": "10$",
+          "description": ["lorem ipsum dolor sit amet1", "lorem1", "Hello World!"],
+          "buttonText": "Button"
         },
         {
-          "src": "https://picsum.photos/300/300/?image=41",
           "title": "Title2",
-          "description": "lorem ipsum dolor sit amet2",
-          "button": "Button"
+          "price": "15$",
+          "description": ["lorem ipsum dolor sit amet2", "lorem2", "Hello World!"],
+          "buttonText": "Button"
         },
         {
-          "src": "https://picsum.photos/300/300/?image=41",
           "title": "Title3",
-          "description": "lorem ipsum dolor sit amet3",
-          "button": "Button"
+          "price": "20$",
+          "description": ["lorem ipsum dolor sit amet3", "lorem3", "Hello World!"],
+          "buttonText": "Button"
         }
     ]
 }

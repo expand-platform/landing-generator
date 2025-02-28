@@ -14,6 +14,9 @@ import { contactsConfig } from '@configs/contactsConfig';
 
 import Footer from "@sections/Footer.vue";
 import { footerConfig } from '@/configs/footerConfig';
+
+import Pricing from '@sections/Pricing.vue';
+import { pricingConfig } from '@/configs/pricingConfig';
 </script>
 
 <template>
@@ -22,6 +25,8 @@ import { footerConfig } from '@/configs/footerConfig';
   <Slider :configs="sliderConfig"></Slider>
 
   <Features :features="featuresConfig"></Features>
+
+  <Pricing :configs="pricingConfig"></Pricing>
 
   <Contacts :configs="contactsConfig"></Contacts>
 

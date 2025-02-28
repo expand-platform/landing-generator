@@ -9,13 +9,19 @@ defineProps<{
 
 <template>
 
-<BCardGroup style="padding: 40px;">
-  <BCard v-for="card in configs.cards" :title="card.title" :img-src="card.src" img-alt="Image" img-top>
-    <BCardText>
-      {{ card.description }}
+<BCardGroup class="card-group">
+  <BCard v-for="card in configs.cards" class="text-center card">
+    <template #header class="card-title">
+        {{ card.title }}
+    </template>
+    <BCardText class="card-price">
+      {{ card.price }}
     </BCardText>
-    <button>
-        {{ card.button }}
+    <BCardText v-for="line in card.description" class="card-desription">
+      {{ line }}
+    </BCardText>
+    <button class="w-100 btn btn-lg btn-primary">
+      {{ card.buttonText }}
     </button>
   </BCard>
  
@@ -24,5 +30,20 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
+@use "@scss/base/media.scss";
+
+.card-price {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.card-group {
+  padding-left: 5%;
+  padding-right: 5%;
+  @include media.md {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
 
 </style>

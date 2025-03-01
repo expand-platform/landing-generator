@@ -24,12 +24,7 @@ defineProps<{
     <div class="socials mb-4 d-flex justify-content-center">
       <CRow>
         <CCol v-for="icon in configs?.socialIcons.icons">
-          <BIcon
-            :icon="icon.icon"
-            :url="icon.url"
-            :text="icon.text"
-            :style="configs?.style.icons"
-          />
+          <BIcon :icon="icon.icon" :url="icon.url" :text="icon.text" :style="configs?.style.icons" />
         </CCol>
       </CRow>
     </div>

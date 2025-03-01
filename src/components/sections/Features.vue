@@ -34,7 +34,7 @@ defineProps<{
                   <BIcon v-if="feature.icon" :icon="feature.icon" :url="feature.button.href"
                     :style="features?.style.icons" />
                   <!--? orientation top / bottom for corner radius -->
-                  <CCardImage :style="features?.style.images" v-else orientation="top" :src="feature.image" class="mb-3" />
+                  <CCardImage :style="features?.style.images" v-else orientation="top" :src="feature.image" class="card-img mb-3" />
                 </section>
 
                 <!-- texts -->
@@ -55,4 +55,19 @@ defineProps<{
 
 <style lang="scss" scoped>
 @use "@scss/base/media.scss";
+
+.card-img {
+  max-width: 80%;
+
+  @include media.sm {
+    max-width: 60%;
+  }
+  @include media.lg {
+    max-width: 100%;
+  }
+}
+
+.img-wrapper {
+
+}
 </style>

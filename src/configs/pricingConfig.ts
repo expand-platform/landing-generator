@@ -1,9 +1,10 @@
 export let pricingConfig = {
+    pricingTitle: 'Long prices title lorem ipsum dolor sit amet',
     cards: [
         {
           "title": "Title1",
           "price": "10$",
-          "description": ["lorem ipsum dolor sit amet1", "lorem1", "Hello World!"],
+          "description": ["lorem ipsum dolor sit amet1 amet2", "lorem1", "Hello World!"],
           "buttonText": "Button"
         },
         {

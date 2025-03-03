@@ -1,31 +1,31 @@
 import { anchorLinks } from "@configs/common/anchorLinks"
 
-export let lifeSpheresPricingConfig = {
-  title: "Работает над сферами жизни",
-  subtitle: ["Личный расклад на неделю, месяц, год.", "Получите ответы на вопросы, которые вам не безразличны"],
-  anchorLink: anchorLinks.prices.lifeSpheres.replace("#", ""),
+export let stonesPricingConfig = {
+  title: "Выбираем вам камень-амулет",
+  subtitle: ["Для семьи, здоровья, финансов", "Ваш духовный амулет для счастья, от всех невзгод"],
+  anchorLink: anchorLinks.prices.stones.replace("#", ""),
 
   cards: [
     /* Временные */
     {
-      title: "Расклад на любовь",
+      title: "Выбрать камень-оберег",
       price: "900 грн",
       advantages: ["Здравая оценка недели", "Разумное выставление приоритетов", "Возможность избежать глупых ошибок", "Понимание себя и окружающих"],
-      buttonText: "Заказать расклад",
+      buttonText: "Подобрать камень",
       link: "/",
     },
     {
-      title: "Расклад на деньги",
+      title: "Выбрать камень на подарок",
       price: "1500 грн",
       advantages: ["Ставим чёткие приоритеты на месяц", "Здраво оцениваем свои силы", "Избавляемся от эмоциональных ошибок", "Обретаем внутреннюю гармонию"],
-      buttonText: "Заказать расклад",
+      buttonText: "Подобрать камень",
       link: "/",
     },
     {
-      title: "Расклад на здоровье",
+      title: "Любовный камень",
       price: "3000 грн",
       advantages: ["Глобальная оценка на год вперёд", "Возможность заглянуть в будущее", "Избавляемся от эмоциональных ошибок", "Обретаем внутреннюю гармонию и равновесие"],
-      buttonText: "Заказать расклад",
+      buttonText: "Подобрать камень",
       link: "/",
     },
   ],
@@ -37,4 +37,4 @@ export let lifeSpheresPricingConfig = {
   }
 }
 
-export type PricingConfig = typeof lifeSpheresPricingConfig
+export type PricingConfig = typeof stonesPricingConfig

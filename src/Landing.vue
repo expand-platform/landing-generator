@@ -18,6 +18,7 @@ import { footerConfig } from '@/configs/footerConfig';
 import Pricing from '@sections/Pricing.vue';
 import { timeframePricingConfig } from '@/configs/price/timeframePricingConfig';
 import { lifeSpheresPricingConfig } from '@/configs/price/lifeSpheresPricingConfig';
+import { stonesPricingConfig } from './configs/price/stonesPricingConfig';
 </script>
 
 <template>
@@ -30,6 +31,7 @@ import { lifeSpheresPricingConfig } from '@/configs/price/lifeSpheresPricingConf
   <!-- цены -->
   <Pricing :configs="timeframePricingConfig"></Pricing>
   <Pricing :configs="lifeSpheresPricingConfig"></Pricing>
+  <Pricing :configs="stonesPricingConfig"></Pricing>
 
   <Contacts :configs="contactsConfig"></Contacts>
 

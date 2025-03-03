@@ -1,60 +1,66 @@
+import { anchorLinks } from "@configs/common/anchorLinks"
+
 export const navLinks = [
   {
     text: "Расклады таро",
-    url: "/",
+    url: anchorLinks.prices.timeframes,
     active: true,
     dropdown: [
       {
         text: "Общий расклад на судьбу",
-        url: "/",
+        url: anchorLinks.prices.lifeSpheres,
       },
       {
         text: "Финансы и благополучье",
-        url: "/",
+        url: anchorLinks.prices.lifeSpheres,
       },
       {
         text: "Вторая половинка, любовь",
-        url: "/",
+        url: anchorLinks.prices.lifeSpheres,
       },
       {
         text: "Карьера, поиск работы",
-        url: "/",
+        url: anchorLinks.prices.lifeSpheres,
       },
       {
         text: "Семья, родные, здоровье",
-        url: "/",
+        url: anchorLinks.prices.lifeSpheres,
       },
       {
         text: "Расклад на год",
-        url: "/",
+        url: anchorLinks.prices.lifeSpheres,
       },
     ],
   },
   {
     text: "Судьбоносные камни",
-    url: "/",
+    url: anchorLinks.prices.stones,
     active: true,
     dropdown: [
       {
         text: "Подобрать личный камень",
-        url: "/",
+        url: anchorLinks.prices.stones,
       },
       {
         text: "Выбрать камень-оберег",
-        url: "/",
+        url: anchorLinks.prices.stones,
       },
       {
         text: "Найти свой денежный камень",
-        url: "/",
+        url: anchorLinks.prices.stones,
       },
       {
         text: "Выбрать камень здоровья",
-        url: "/",
+        url: anchorLinks.prices.stones,
       },
       {
         text: "Выбрать камень любви",
-        url: "/",
+        url: anchorLinks.prices.stones,
       },
     ],
+  },
+  {
+    text: "Цена",
+    url: anchorLinks.prices.all,
   },
 ]

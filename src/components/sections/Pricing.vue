@@ -8,41 +8,43 @@ defineProps<{
 </script>
 
 <template>
-  <section class="section-wrapper" :style="configs.style?.section">
-    <BContainer>
-      <section class="text-center">
-        <h2>
-          {{ configs.title }}
-        </h2>
-        <p class="subtitle mb-1" v-for="line in configs.subtitle" :key="line">
-          {{ line }}
-        </p>
-      </section>
-      <BCardGroup class="card-group">
-        <BRow class="d-block d-md-flex row-cols-md-2 justify-content-center">
-          <BCol v-for="card in configs.cards" :key="card.price" class="card-column">
-            <BCard class="text-center card" img-top>
-              <template #header>
-                <h4 class="mb-0">
-                  {{ card.title }}
-                </h4>
-              </template>
-              <BCardText class="card-price">
-                {{ card.price }}
-              </BCardText>
-              <BCardText v-for="line in card.advantages" :key="line" class="card-desription px-3 text-start">
-                {{ line }}
-              </BCardText>
-              <div>
-                <a class="w-100 btn btn-lg btn-primary button" href="#">
-                  {{ card.buttonText }}
-                </a>
-              </div>
-            </BCard>
-          </BCol>
-        </BRow>
-      </BCardGroup>
-    </BContainer>
+  <section :id="configs.anchorLink" class="anchor-section">
+    <section class="section-wrapper" :style="configs.style?.section">
+      <BContainer>
+        <section class="text-center">
+          <h2>
+            {{ configs.title }}
+          </h2>
+          <p class="subtitle mb-1" v-for="line in configs.subtitle" :key="line">
+            {{ line }}
+          </p>
+        </section>
+        <BCardGroup class="card-group">
+          <BRow class="d-block d-md-flex row-cols-md-2 justify-content-center">
+            <BCol v-for="card in configs.cards" :key="card.price" class="card-column">
+              <BCard class="text-center card" img-top>
+                <template #header>
+                  <h4 class="mb-0">
+                    {{ card.title }}
+                  </h4>
+                </template>
+                <BCardText class="card-price">
+                  {{ card.price }}
+                </BCardText>
+                <BCardText v-for="line in card.advantages" :key="line" class="card-desription px-3 text-start">
+                  {{ line }}
+                </BCardText>
+                <div>
+                  <a class="w-100 btn btn-lg btn-primary button" href="#">
+                    {{ card.buttonText }}
+                  </a>
+                </div>
+              </BCard>
+            </BCol>
+          </BRow>
+        </BCardGroup>
+      </BContainer>
+    </section>
   </section>
 
 </template>

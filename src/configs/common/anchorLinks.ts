@@ -5,4 +5,5 @@ export const anchorLinks = {
     timeframes: "#timeframePrices",
     stones: "#stonesPrices",
   },
+  contacts: "#contacts",
 }

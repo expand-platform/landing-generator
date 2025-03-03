@@ -1,8 +1,8 @@
 import { anchorLinks } from "@configs/common/anchorLinks"
 
 export let timeframePricingConfig = {
-  title: "Загляните в ваше будущее",
-  subtitle: ["Личный расклад на неделю, месяц, год.", "Получите ответы на вопросы, которые вам не безразличны"],
+  title: "Желаете заглянуть в будущее?",
+  subtitle: ["Это возможно. Личный расклад на неделю, месяц, год.", "Получите ответы на вопросы, которые вам не безразличны"],
   anchorLink: anchorLinks.prices.timeframes.replace("#", ""),
 
   cards: [

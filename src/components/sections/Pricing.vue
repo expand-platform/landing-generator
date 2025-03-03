@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { PricingConfig } from "@/configs/price/timeframePricingConfig";
-import { BCard, BCardText, BCardGroup, BContainer, BRow, BCol } from 'bootstrap-vue-next';
+import type { PricingConfig } from '@/configs/price/timeframePricingConfig'
+import { BCard, BCardText, BCardGroup, BContainer, BRow, BCol } from 'bootstrap-vue-next'
 
 defineProps<{
   configs: PricingConfig
@@ -9,9 +9,9 @@ defineProps<{
 
 <template>
   <section :id="configs.anchorLink" class="anchor-section">
-    <section class="section-wrapper" :style="configs.style?.section">
+    <section class="section-wrapper" :style="configs.style.section">
       <BContainer>
-        <section class="text-center">
+        <section class="text-center mb-5">
           <h2>
             {{ configs.title }}
           </h2>
@@ -21,7 +21,7 @@ defineProps<{
         </section>
         <BCardGroup class="card-group">
           <BRow class="d-block d-md-flex row-cols-md-2 justify-content-center">
-            <BCol v-for="card in configs.cards" :key="card.price" class="card-column">
+            <BCol v-for="card in configs.cards" :key="card.price" class="card-column mb-5">
               <BCard class="text-center card" img-top>
                 <template #header>
                   <h4 class="mb-0">
@@ -31,7 +31,11 @@ defineProps<{
                 <BCardText class="card-price">
                   {{ card.price }}
                 </BCardText>
-                <BCardText v-for="line in card.advantages" :key="line" class="card-desription px-3 text-start">
+                <BCardText
+                  v-for="line in card.advantages"
+                  :key="line"
+                  class="card-desription px-3 text-start"
+                >
                   {{ line }}
                 </BCardText>
                 <div>
@@ -46,12 +50,10 @@ defineProps<{
       </BContainer>
     </section>
   </section>
-
 </template>
 
 <style lang="scss" scoped>
-@use "@scss/base/media.scss";
-
+@use '@scss/base/media.scss';
 
 .card-group {
   display: block !important;
@@ -63,11 +65,9 @@ defineProps<{
   }
 }
 
-
-
 .card-column {
-  padding-top: 5%;
-  padding-bottom: 5%;
+  // padding-top: 5%;
+  // padding-bottom: 5%;
   min-width: 200px;
 
   @include media.sm {
@@ -90,7 +90,6 @@ defineProps<{
   border-radius: 5px !important;
   border: 1px solid gray !important;
 }
-
 
 .card-price {
   font-size: 30px;

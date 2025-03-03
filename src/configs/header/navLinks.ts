@@ -60,7 +60,11 @@ export const navLinks = [
     ],
   },
   {
-    text: "Цена",
+    text: "Цены",
     url: anchorLinks.prices.all,
+  },
+  {
+    text: "Контакты",
+    url: anchorLinks.contacts,
   },
 ]

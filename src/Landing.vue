@@ -7,7 +7,8 @@ import Slider from "@sections/Slider.vue"
 import { sliderConfig } from '@/configs/sliderConfig';
 
 import Features from '@sections/Features.vue';
-import { featuresConfig } from '@configs/featuresConfig'
+import { lifeSpheresfeaturesConfig } from '@/configs/features/lifeSpheresFeaturesConfig'
+import { timeframesFeaturesConfig } from '@/configs/features/timeframesFeaturesConfig'
 
 import Contacts from '@sections/Contacts.vue'
 import { contactsConfig } from '@configs/contactsConfig';
@@ -26,7 +27,9 @@ import { stonesPricingConfig } from './configs/price/stonesPricingConfig';
 
   <Slider :configs="sliderConfig"></Slider>
 
-  <Features :features="featuresConfig"></Features>
+  <!-- cards (services) -->
+  <Features :features="timeframesFeaturesConfig"></Features>
+  <Features :features="lifeSpheresfeaturesConfig"></Features>
 
   <!-- цены -->
   <Pricing :configs="timeframePricingConfig"></Pricing>

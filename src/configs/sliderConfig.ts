@@ -1,20 +1,18 @@
+const sliderImgPath = "/img/slider"
+
 export let sliderConfig = {
-  // Стрелочки влево-вправо
+  // Стрелочки и индикаторы
   controls: true,
-
-  // Индикаторы порядка и количества картинок
   indicators: true,
+  interval: 3000,
 
-  // Альтернативная анимация смены картинок
+  // Анимация слайдов
   fade: false,
 
   // Автопрокрутка
-  ride: "carousel",
-  // false: выключено
-  // true: начинает крутится после первого взаимодействия с каруселью
+  // true: крутится после первого взаимодействия с каруселью
   // "carousel": крутиться с самого начала
-
-  interval: 3000, // В миллисекундах
+  ride: "carousel", // true, false, "carousel"
 
   style: {
     section: {
@@ -34,15 +32,15 @@ export let sliderConfig = {
 
     // Можно добавить caption, но если его не будет - ничего не сломается
     {
-      "src": "/img/taro/1.jpg",
+      "src": `${sliderImgPath}/1.jpg`,
       "caption": "Расклад на судьбу"
     },
     {
-      "src": "/img/taro/2.jpeg",
+      "src": `${sliderImgPath}/2.jpeg`,
       "caption": "Расклад на год"
     },
     {
-      "src": "/img/taro/3.jpeg",
+      "src": `${sliderImgPath}/3.jpeg`,
       "caption": "Расклад на любовь"
     }
   ]

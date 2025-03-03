@@ -1,7 +1,7 @@
 import { anchorLinks } from "@configs/common/anchorLinks"
 
 export let lifeSpheresPricingConfig = {
-  title: "Работает над сферами жизни",
+  title: "Какие сферы жизни вам не безразличны?",
   subtitle: ["Личный расклад на неделю, месяц, год.", "Получите ответы на вопросы, которые вам не безразличны"],
   anchorLink: anchorLinks.prices.lifeSpheres.replace("#", ""),
 

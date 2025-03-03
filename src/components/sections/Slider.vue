@@ -30,7 +30,7 @@ let width = window.innerWidth
     <BCarousel v-else :fade="configs.fade" :interval="configs.interval" :ride="configs.ride as any">
       <BCarouselSlide v-for="image in configs.images" :key="image.src" class="carousel-img" :img-src="image.src">
         <template #caption>
-          <h2 class="caption">
+          <h2 class="caption test">
             {{ image.caption }}
           </h2>
         </template>
@@ -44,37 +44,48 @@ let width = window.innerWidth
 <style lang="scss" scoped>
 @use "@scss/base/media.scss";
 
+/* image */
 .carousel-img {
   max-width: 100vw;
   max-height: 100vh;
 }
 
-.carousel-caption {
-  padding-bottom: 0.75rem !important;
-  bottom: 0.75rem !important;
+/* text wrapper */
+::v-deep(.carousel-caption) {
+  width: 100%;
+  right: 0;
+  left: auto;
+  bottom: -5%;
+
+  @include media.sm {
+    bottom: 0;
+  }
+
+  @include media.md {
+    bottom: 5%;
+  }
+
+  @include media.lg {
+    // bottom: 5%;
+  }
 }
 
-.caption {
-  text-shadow:
-    -1px -1px 0 black,
-    1px -1px 0 black,
-    -1px 1px 0 black,
-    1px 1px 0 black;
 
-  margin-bottom: -100px;
-  font-size: 20px;
+/* text */
+.caption {
+  font-size: 1.6rem;
 
   @include media.sm {
     font-size: 40px;
-    margin-bottom: -15px;
   }
 
   @include media.md {
     font-size: 60px;
   }
 
-  @include media.lg {
-    margin-bottom: 0;
-  }
+  text-shadow: -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
 }
 </style>

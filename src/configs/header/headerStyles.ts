@@ -1,6 +1,6 @@
 export const headerStyle = {
   header: {
-    backgroundColor: "#000",
+    backgroundColor: "inherit",
     color: "#f5f5f5",
     padding: "1rem .5rem",
   },

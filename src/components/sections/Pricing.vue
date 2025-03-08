@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { PricingConfig } from '@/configs/price/timeframePricingConfig'
+import type { GlobalThemeConfig } from '@/configs/globalThemeConfig';
 import { BCard, BCardText, BCardGroup, BContainer, BRow, BCol } from 'bootstrap-vue-next'
 
 defineProps<{
   configs: PricingConfig
+  theme: GlobalThemeConfig
 }>()
 </script>
 
@@ -88,7 +90,7 @@ defineProps<{
 
 .card {
   border-radius: 5px !important;
-  border: 1px solid gray !important;
+  border: 1px solid gray !important;  
 }
 
 .card-price {

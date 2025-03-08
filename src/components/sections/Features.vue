@@ -13,9 +13,11 @@ import {
 import BIcon from '@components/icons/BIcon.vue'
 
 import type { FeaturesConfigT } from '@/configs/features/lifeSpheresFeaturesConfig'
+import type { GlobalThemeConfig } from '@/configs/globalThemeConfig';
 
 defineProps<{
   features: FeaturesConfigT
+  theme: GlobalThemeConfig
 }>()
 </script>
 

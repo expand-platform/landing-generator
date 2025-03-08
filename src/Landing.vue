@@ -20,25 +20,32 @@ import Pricing from '@sections/Pricing.vue';
 import { timeframePricingConfig } from '@/configs/price/timeframePricingConfig';
 import { lifeSpheresPricingConfig } from '@/configs/price/lifeSpheresPricingConfig';
 import { stonesPricingConfig } from './configs/price/stonesPricingConfig';
+
+import { globalThemeConfig } from './configs/globalThemeConfig';
 </script>
 
 <template>
-  <Header :configs="headerConfig"></Header>
+  <div :style="globalThemeConfig.common">
 
-  <Slider :configs="sliderConfig"></Slider>
-
-  <!-- cards (services) -->
-  <Features :features="timeframesFeaturesConfig"></Features>
-  <Features :features="lifeSpheresfeaturesConfig"></Features>
-
-  <!-- цены -->
-  <Pricing :configs="timeframePricingConfig"></Pricing>
-  <Pricing :configs="lifeSpheresPricingConfig"></Pricing>
-  <Pricing :configs="stonesPricingConfig"></Pricing>
-
-  <Contacts :configs="contactsConfig"></Contacts>
-
-  <Footer :configs="footerConfig"></Footer>
+    <Header :configs="headerConfig" :theme="globalThemeConfig"></Header>
+  
+    <Slider :configs="sliderConfig" :theme="globalThemeConfig"></Slider>
+  
+    <!-- cards (services) -->
+    <Features :features="timeframesFeaturesConfig" :theme="globalThemeConfig"></Features>
+    <Features :features="lifeSpheresfeaturesConfig" :theme="globalThemeConfig"></Features>
+  
+    <!-- цены -->
+    <Pricing :configs="timeframePricingConfig" :theme="globalThemeConfig"></Pricing>
+    <Pricing :configs="lifeSpheresPricingConfig" :theme="globalThemeConfig"></Pricing>
+    <Pricing :configs="stonesPricingConfig" :theme="globalThemeConfig"></Pricing>
+  
+    <Contacts :configs="contactsConfig" :theme="globalThemeConfig"></Contacts>
+  
+    <Footer :configs="footerConfig" :theme="globalThemeConfig"></Footer>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>

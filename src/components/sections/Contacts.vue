@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // import { phoneNumbers } from '@/configs/header/phones'
 import type { contactsConfigT } from '@configs/contactsConfig'
+import type { GlobalThemeConfig } from '@/configs/globalThemeConfig';
 
 import { CContainer, CRow, CCol } from '@coreui/bootstrap-vue'
 
@@ -8,6 +9,7 @@ import BIcon from '@components/icons/BIcon.vue'
 
 defineProps<{
   configs: contactsConfigT
+  theme: GlobalThemeConfig
 }>()
 </script>
 

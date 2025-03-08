@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import type { GlobalThemeConfig } from "@/configs/globalThemeConfig";
 import type { SliderConfig } from "@/configs/sliderConfig";
 import { BCarousel, BCarouselSlide } from 'bootstrap-vue-next';
 
 defineProps<{
   configs: SliderConfig
+  theme: GlobalThemeConfig
 }>()
 
 let width = window.innerWidth

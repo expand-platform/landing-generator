@@ -16,9 +16,6 @@ export const headerConfig = {
     enabled: true,
     placement: "center", // left, right
     align: "center", // start, center, end (BS class bind)
-    style: {
-
-    },
     links: navLinks,
   },
   phone: {

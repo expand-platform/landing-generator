@@ -2,11 +2,11 @@
 import Contacts from '@components/sections/Contacts.vue'
 import { contactsConfig } from '@configs/contactsConfig'
 import Pricing from '@sections/Pricing.vue'
-import { pricingConfig } from '@/configs/pricingConfig'
+import { timeframePricingConfig } from '@/configs/price/timeframePricingConfig'
 </script>
 
 <template>
-  <Pricing :configs="pricingConfig"></Pricing>
+  <Pricing :configs="timeframePricingConfig"></Pricing>
   <!-- <Contacts :configs="contactsConfig" /> -->
 </template>
 

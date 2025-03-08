@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface iconProps {
-  icon?: string, // "bi-alarm", "bi-time"
+  icon?: string | boolean, // "bi-alarm", "bi-time"
   url?: string, // link to website
   text?: string,
   style?: any,
@@ -50,4 +50,3 @@ a {
   padding: 0;
 }
 </style>
- 

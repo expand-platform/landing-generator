@@ -70,7 +70,7 @@ const isBurgerVisible = ref(false)
           </div>
 
           <!-- ? phone numbers -->
-          <aside class="phones col-md-4 col-lg-2 text-center mb-2 mb-lg-0" v-if="configs.phone.numbers">
+          <aside class="phones d-lg-none d-xl-block col-md-4 col-lg-2 text-center mb-2 mb-lg-0" v-if="configs.phone.numbers">
             <CRow class="h-100 align-items-center">
               <CCol v-for="phoneNumber in configs.phone.numbers" :key="phoneNumber">
                 <a class="phone-link col-lg" :href="'tel:' + phoneNumber" :style="configs.style.phones"
@@ -80,7 +80,7 @@ const isBurgerVisible = ref(false)
           </aside>
 
           <!-- ? social icons -->
-          <aside class="social-icons col-md col-lg-2 flex-grow-0 flex-basis-0">
+          <aside class="social-icons d-lg-none d-xl-block col-md col-lg-2 flex-grow-0 flex-basis-0">
             <CRow class="flex-nowrap h-100 justify-content-center align-items-center">
               <CCol class="col-3 col-lg-4" v-for="icon in configs.socialIcons.icons" :key="icon.icon">
                 <!-- ? icons -->

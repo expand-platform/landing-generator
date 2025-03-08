@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { PricingConfig } from "@/configs/pricingConfig";
 import { BCard, BCardText, BCardGroup, BContainer, BRow, BCol } from 'bootstrap-vue-next';
-import Pricing from '@sections/Pricing.vue';
 
 defineProps<{
   configs: PricingConfig
